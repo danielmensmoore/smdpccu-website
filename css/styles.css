@@ -90,7 +90,7 @@ body {
 }
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .nav-logo img {
-  height: 52px; width: 52px; object-fit: contain;
+  height: 60px; width: 60px; object-fit: contain;
   border-radius: 50%; border: 2px solid rgba(255,255,255,0.3);
   padding: 2px; transition: border-color 0.4s ease;
 }
@@ -98,13 +98,13 @@ body {
 .nav-logo-text { display: flex; flex-direction: column; }
 .nav-logo-name {
   font-family: 'Playfair Display', serif;
-  font-size: 15px; font-weight: 700; color: white;
+  font-size: 17px; font-weight: 700; color: white;
   line-height: 1.25; transition: color 0.4s ease;
   text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 .navbar.scrolled .nav-logo-name { color: var(--primary); text-shadow: none; }
 .nav-logo-tagline {
-  font-size: 11px; color: rgba(255,255,255,0.75); font-style: italic;
+  font-size: 12px; color: rgba(255,255,255,0.75); font-style: italic;
   font-weight: 500; letter-spacing: 0.3px; transition: color 0.4s ease;
 }
 .navbar.scrolled .nav-logo-tagline { color: var(--accent); }
