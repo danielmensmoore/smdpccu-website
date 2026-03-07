@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>St. Martin De Porres Co-operative Credit Union Ltd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <img src="images/logo.jpg" alt="SMDPCCU Logo" id="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">St. Martin De Porres<br>Co-operative Credit Union</span>
+        <span class="nav-logo-tagline">The Happy Family</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#loans-savings">Loans & Savings</a></li>
+      <li><a href="#calculators">Tools</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact" class="btn-nav">Contact Us</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+
+  <div class="hero-slider" id="heroSlider">
+
+    <!-- SLIDE 1: Welcome -->
+    <div class="hero-slide active">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge"><i class="fas fa-circle"></i> Trusted Since Inception</div>
+          <h1>Your Financial Growth, <span>Our Commitment</span></h1>
+          <p>Empowering members through reliable savings, affordable loans, and trusted financial services. Join the happy family today.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-user-plus"></i> Become a Member</a>
+            <a href="#services" class="btn btn-outline"><i class="fas fa-play"></i> Our Services</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://web.facebook.com/profile.php?id=61584511884792" target="_blank" class="fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/stmartindeporresccu" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@stmartindeporresccu" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/message/YMKPBDBY4DVIL1" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat-num">10K+</div><div class="hero-stat-label">Members</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">GH₵50M+</div><div class="hero-stat-label">Total Assets</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Years of Service</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="images/logo.jpg" alt="SMDPCCU" id="hero-logo-img">
+            <div class="hero-card-text">The Happy Family</div>
+            <div class="hero-card-sub">Building Wealth Together</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Loans -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge"><i class="fas fa-hand-holding-usd"></i> Loans Made Easy</div>
+          <h1>Flexible Loans For <span>Every Need</span></h1>
+          <p>From personal to business loans, access affordable credit with competitive rates and flexible repayment plans designed around your life.</p>
+          <div class="hero-actions">
+            <a href="#loans-savings" class="btn btn-primary"><i class="fas fa-list"></i> Explore Loans</a>
+            <a href="#calculators" class="btn btn-outline"><i class="fas fa-calculator"></i> Check Eligibility</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">Loan Products</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">From 1%</div><div class="hero-stat-label">Per Month</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">24 Mo.</div><div class="hero-stat-label">Max Repayment</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-icon-big"><i class="fas fa-hand-holding-usd"></i></div>
+            <div class="hero-card-text">Our Loan Products</div>
+            <div style="margin-top:18px;width:100%;text-align:left;">
+              <div class="hero-loan-item"><i class="fas fa-check"></i> Normal Loan — 3–4% per month</div>
+              <div class="hero-loan-item"><i class="fas fa-check"></i> Loan Within Savings — 1% per month</div>
+              <div class="hero-loan-item"><i class="fas fa-check"></i> Business Loan — 5% per month</div>
+              <div class="hero-loan-item"><i class="fas fa-check"></i> Salary Workers Loan — 4% per month</div>
+              <div class="hero-loan-item"><i class="fas fa-check"></i> Emergency Loan — 5% per month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Savings -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge"><i class="fas fa-piggy-bank"></i> Save With Confidence</div>
+          <h1>Grow Your Savings, <span>Earn More</span></h1>
+          <p>Enjoy competitive interest on regular savings, susu collections, and fixed deposits. Lock in up to 8% per annum on your fixed deposit today.</p>
+          <div class="hero-actions">
+            <a href="#loans-savings" class="btn btn-primary"><i class="fas fa-wallet"></i> View Savings Products</a>
+            <a href="#calculators" class="btn btn-outline"><i class="fas fa-calculator"></i> Calculate Returns</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat-num">8%</div><div class="hero-stat-label">Max FD Rate p.a.</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">Daily</div><div class="hero-stat-label">Susu Collection</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Savings Products</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-icon-big"><i class="fas fa-chart-line"></i></div>
+            <div class="hero-card-text">Fixed Deposit Rates</div>
+            <div style="margin-top:18px;width:100%;">
+              <div class="hero-fd-row"><span>GH₵2,000 – 499,999</span><span class="hero-fd-rate">Up to 6%</span></div>
+              <div class="hero-fd-row"><span>GH₵500,000 – 999,999</span><span class="hero-fd-rate">Up to 7%</span></div>
+              <div class="hero-fd-row"><span>GH₵1,000,000 and above</span><span class="hero-fd-rate">Up to 8%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Branches -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge"><i class="fas fa-map-marker-alt"></i> Always Near You</div>
+          <h1>5 Branches, <span>One Happy Family</span></h1>
+          <p>Serving Kumasi and beyond — from Atonsu to Esereso, Jachie, Abinkyi Market, and Yaase. We're always close to you, ready to help you grow.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Find Us</a>
+            <a href="#contact" class="btn btn-outline"><i class="fas fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">Branches & Agencies</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">Mon–Fri</div><div class="hero-stat-label">8AM – 5PM</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">Sat</div><div class="hero-stat-label">9AM – 1PM</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-icon-big"><i class="fas fa-building"></i></div>
+            <div class="hero-card-text">Our Locations</div>
+            <div style="margin-top:18px;width:100%;text-align:left;">
+              <div class="hero-branch-item"><i class="fas fa-map-marker-alt"></i> Head Office — Atonsu, Monaco Junction</div>
+              <div class="hero-branch-item"><i class="fas fa-code-branch"></i> Aputuogya Branch</div>
+              <div class="hero-branch-item"><i class="fas fa-code-branch"></i> Esereso Branch</div>
+              <div class="hero-branch-item"><i class="fas fa-code-branch"></i> Jachie Branch</div>
+              <div class="hero-branch-item"><i class="fas fa-code-branch"></i> Abinkyi Market Branch</div>
+              <div class="hero-branch-item"><i class="fas fa-store"></i> Yaase Agency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end hero-slider -->
+
+  <!-- Slider Controls -->
+  <button class="hero-nav hero-prev" onclick="moveHeroSlide(-1)" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+  <button class="hero-nav hero-next" onclick="moveHeroSlide(1)" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" onclick="goToHeroSlide(0)" aria-label="Slide 1"></button>
+    <button class="hero-dot" onclick="goToHeroSlide(1)" aria-label="Slide 2"></button>
+    <button class="hero-dot" onclick="goToHeroSlide(2)" aria-label="Slide 3"></button>
+    <button class="hero-dot" onclick="goToHeroSlide(3)" aria-label="Slide 4"></button>
+  </div>
+
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="services section-padding" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Financial Services Tailored For You</h2>
+      <p class="section-subtitle">We provide a wide range of financial products designed to help you save, borrow, and grow your wealth with confidence.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-piggy-bank"></i></div>
+        <h3>Savings Accounts</h3>
+        <p>Grow your money with our competitive interest rates on regular savings, susu collections, and fixed deposits.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <h3>Affordable Loans</h3>
+        <p>Access personal, business, and emergency loans with flexible repayment plans and competitive interest rates.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Mobile Banking</h3>
+        <p>Bank on the go with our mobile banking platform. Check balances, transfer funds, and manage your account anytime.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-users"></i></div>
+        <h3>Susu Collection</h3>
+        <p>Our trusted field officers visit you daily to collect your susu contributions, making saving easy and convenient.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Insurance Services</h3>
+        <p>Protect what matters most with our insurance products covering life, health, and property for peace of mind.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Financial Education</h3>
+        <p>We empower our members with financial literacy programs to help them make informed decisions about their money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about section-padding" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="about-image-card">
+          <img src="images/logo.jpg" alt="SMDPCCU" id="about-logo-img">
+        </div>
+        <div class="about-floating-card">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <div class="about-floating-num">20+</div>
+            <div class="about-floating-label">Years of Trust</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">The Happy Family You Can Trust</h2>
+        <p class="section-subtitle">St. Martin De Porres Co-operative Credit Union Ltd. is a dynamic financial institution committed to sustaining the trust, confidence and well-being of our membership through superior products, service excellence and a highly empowered team of employees to promote members' development socially and economically.</p>
+
+        <div class="mission-vision">
+          <div class="mv-card">
+            <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+            <p>We are a dynamic Financial Institution committed to sustaining the trust, confidence and well-being of our membership through superior products, service excellence and a highly empowered team of employees to promote Members' development socially and economically.</p>
+          </div>
+          <div class="mv-card">
+            <h4><i class="fas fa-eye"></i> Our Vision</h4>
+            <p>To be the premier financial co-operative institution for every member within our catchment areas, making a positive difference in the financial lives of our members and in the community we serve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== LOANS & SAVINGS ========== -->
+<section class="loans-savings section-padding" id="loans-savings">
+  <div class="container">
+    <div class="ls-header reveal">
+      <div class="section-label">Loans & Savings</div>
+      <h2 class="section-title">Products That Work For You</h2>
+      <p class="section-subtitle">Explore our range of loan and savings products designed to meet your unique financial needs.</p>
+    </div>
+
+    <div class="ls-tabs reveal">
+      <button class="ls-tab active" onclick="switchTab('loans')">Loan Products</button>
+      <button class="ls-tab" onclick="switchTab('savings')">Savings Products</button>
+    </div>
+
+    <div class="ls-content active" id="loans-tab">
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-hand-holding-usd"></i></div>
+        <h3>Normal Loan</h3>
+        <p>Borrow up to 2x your savings (3% per month) or 3x your savings (4% per month) for personal needs — education, medical, home improvement, and more. Up to 24 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 3% – 4% per month (reducing balance)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-lock-open"></i></div>
+        <h3>Loan Within Savings</h3>
+        <p>Borrow up to your full savings balance without disturbing your deposit. Quick processing, lowest rate. Up to 12 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 1% per month (reducing balance)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-coins"></i></div>
+        <h3>Susu Loan</h3>
+        <p>Leverage your susu contributions for affordable credit. Borrow up to 2x (3% per month) or 3x (4% per month) of susu savings. Max GH₵150,000. Up to 12 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 3% – 4% per month (straight-line)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-store"></i></div>
+        <h3>Business Loan</h3>
+        <p>Grow your business with up to 5x your savings. For inventory, equipment, and business expansion. Up to 24 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 5% per month(reducing balance)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-briefcase"></i></div>
+        <h3>Salary Workers Loan</h3>
+        <p>Available to salaried workers. Borrow based on your net salary with up to 40% debt service ratio. Up to 18 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 4% per month(reducing balance)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-university"></i></div>
+        <h3>Controller / DAS Loan</h3>
+        <p>Repayments deducted at source from your salary. Loan amount based on your monthly deduction affordability. Up to 18 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 4% per month(reducing balance)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-bolt"></i></div>
+        <h3>Emergency Loan</h3>
+        <p>Quick access to funds for urgent needs. Up to 20% of your total assets, with a ceiling of GH₵500,000. Up to 6 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 5% per month(reducing balance)</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon loan"><i class="fas fa-star"></i></div>
+        <h3>Special Purpose Loan</h3>
+        <p>For weddings, funerals, and other special occasions. Up to 20% of your total assets, ceiling GH₵500,000. Up to 6 months.</p>
+        <div class="ls-card-rate"><i class="fas fa-percent"></i> 5% per month(reducing balance)</div>
+      </div>
+    </div>
+
+    <div class="ls-content" id="savings-tab">
+      <div class="ls-card reveal">
+        <div class="ls-card-icon saving"><i class="fas fa-wallet"></i></div>
+        <h3>Member Savings</h3>
+        <p>To open a Member Savings account, a minimum share purchase of <strong>GH₵500</strong> and an entrance fee of <strong>GH₵20</strong> is required. Earn competitive interest on your deposits from day one.</p>
+        <div class="ls-card-rate"><i class="fas fa-chart-line"></i> Competitive interest</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon saving"><i class="fas fa-coins"></i></div>
+        <h3>Susu Savings</h3>
+        <p>Daily contributions collected by our trusted field officers. The easy and convenient way to build your savings.</p>
+        <div class="ls-card-rate"><i class="fas fa-chart-line"></i> Daily collection</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon saving"><i class="fas fa-lock"></i></div>
+        <h3>Fixed Deposit</h3>
+        <p>Lock in higher returns with tiered rates based on your deposit amount. Terms: 91, 182, or 365 days. Rates from 5% to 8% p.a.</p>
+        <div class="ls-card-rate"><i class="fas fa-chart-line"></i> Up to 8% p.a.</div>
+      </div>
+      <div class="ls-card reveal">
+        <div class="ls-card-icon saving"><i class="fas fa-user-graduate"></i></div>
+        <h3>Youth Savings</h3>
+        <p>Secure your child's future with our dedicated youth savings account. Start building their future today.</p>
+        <div class="ls-card-rate"><i class="fas fa-chart-line"></i> Special rates</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CALCULATORS ========== -->
+<section class="calculators section-padding" id="calculators">
+  <div class="container">
+    <div class="calc-header reveal">
+      <div class="section-label">Financial Tools</div>
+      <h2 class="section-title">Plan Your Finances</h2>
+      <p class="section-subtitle">Use our calculators to explore loan eligibility and fixed deposit returns before you commit.</p>
+    </div>
+    <div class="calc-grid">
+      <!-- Loan Eligibility Checker -->
+      <div class="calc-card reveal">
+        <h3>Loan Eligibility Checker</h3>
+        <p>Check how much you may qualify to borrow based on your savings, income, and loan type.</p>
+        <div class="form-group">
+          <label>Loan Type</label>
+          <select id="loanType" onchange="updateLoanFields()">
+            <option value="within_savings">Loan Within Savings (up to savings, 1% per monthreducing)</option>
+            <option value="normal_2x">Normal Loan – 2× savings (3% per monthreducing)</option>
+            <option value="normal_3x">Normal Loan – 3× savings (4% per monthreducing)</option>
+            <option value="susu_2x">Susu Loan – 2× savings (3% per monthstraight-line)</option>
+            <option value="susu_3x">Susu Loan – 3× savings (4% per monthstraight-line)</option>
+            <option value="business">Business Loan (5× savings, 5% per monthreducing)</option>
+            <option value="salary">Salary Workers Loan (40% DSR, 4% per monthreducing)</option>
+            <option value="controller">Controller / DAS Loan (4% per monthreducing)</option>
+            <option value="emergency">Emergency Loan (20% of assets, 5% per monthreducing)</option>
+            <option value="special">Special Purpose Loan (20% of assets, 5% per monthreducing)</option>
+          </select>
+        </div>
+        <div class="form-group" id="savingsGroup">
+          <label id="savingsLabel">Total Savings with Us (GH₵)</label>
+          <input type="number" id="loanSavings" placeholder="e.g. 5000">
+        </div>
+        <div class="form-group" id="salaryGroup" style="display:none">
+          <label id="salaryLabel">Net Monthly Salary (GH₵)</label>
+          <input type="number" id="loanSalary" placeholder="e.g. 3000">
+        </div>
+        <div class="form-group" id="assetsGroup" style="display:none">
+          <label>Total Assets with Us (GH₵)</label>
+          <input type="number" id="loanAssets" placeholder="e.g. 20000">
+        </div>
+        <div class="form-group">
+          <label>Repayment Period (Months)</label>
+          <select id="loanTerm">
+            <option value="3">3 Months</option>
+            <option value="6">6 Months</option>
+            <option value="12" selected>12 Months</option>
+            <option value="18">18 Months</option>
+            <option value="24">24 Months</option>
+          </select>
+        </div>
+        <button class="btn-calc" onclick="checkLoanEligibility()">Check Eligibility</button>
+        <div class="calc-result" id="loanResult">
+          <h4>Estimated Loan Eligibility</h4>
+          <div class="result-value" id="loanResultValue"></div>
+          <div class="result-details" id="loanResultDetails"></div>
+        </div>
+      </div>
+
+      <!-- Fixed Deposit Calculator -->
+      <div class="calc-card reveal">
+        <h3>Fixed Deposit Calculator</h3>
+        <p>Calculate your returns based on our tiered rates effective 1st April 2025.</p>
+        <div class="form-group">
+          <label>Deposit Amount (GH₵)</label>
+          <input type="number" id="fdAmount" placeholder="e.g. 10000" oninput="updateFDRate()">
+        </div>
+        <div class="form-group">
+          <label>Term</label>
+          <select id="fdTerm" onchange="updateFDRate()">
+            <option value="91">91 Days (3 Months)</option>
+            <option value="182">182 Days (6 Months)</option>
+            <option value="365" selected>365 Days (12 Months)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Interest Rate (% p.a.) — <span id="fdRateAuto" style="color:var(--primary);font-weight:700;">auto-detected</span></label>
+          <input type="text" id="fdRate" readonly style="background:#f0f3f8;font-weight:600;color:var(--primary);">
+        </div>
+        <!-- Rate Table -->
+        <div style="margin-bottom:24px;overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="background:var(--primary);color:white;">
+                <th style="padding:10px 14px;text-align:left;border-radius:8px 0 0 0;">Deposit Range (GH₵)</th>
+                <th style="padding:10px 14px;text-align:center;">91 Days</th>
+                <th style="padding:10px 14px;text-align:center;">182 Days</th>
+                <th style="padding:10px 14px;text-align:center;border-radius:0 8px 0 0;">365 Days</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:white;"><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">2,000 – 499,999.99</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid var(--gray-100);">5.00%</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid var(--gray-100);">5.50%</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid var(--gray-100);">6.00%</td></tr>
+              <tr style="background:var(--gray-50);"><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">500,000 – 999,999.99</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid var(--gray-100);">6.00%</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid var(--gray-100);">6.50%</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid var(--gray-100);">7.00%</td></tr>
+              <tr style="background:white;"><td style="padding:10px 14px;">1,000,000 and above</td><td style="padding:10px 14px;text-align:center;">6.50%</td><td style="padding:10px 14px;text-align:center;">7.00%</td><td style="padding:10px 14px;text-align:center;">8.00%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-calc" onclick="calculateFD()">Calculate Returns</button>
+        <div class="calc-result" id="fdResult">
+          <h4>Your Fixed Deposit Returns</h4>
+          <div class="result-value" id="fdResultValue"></div>
+          <div class="result-details" id="fdResultDetails"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== NEWS ========== -->
+<section class="news section-padding" id="news">
+  <div class="container">
+    <div class="news-header reveal">
+      <div class="section-label">Latest Updates</div>
+      <h2 class="section-title">News & Announcements</h2>
+      <p class="section-subtitle">Stay informed with the latest happenings, events, and announcements from SMDPCCU.</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-thumb"><i class="fas fa-bullhorn"></i></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-tag">Announcement</span>
+            <span>February 20, 2026</span>
+          </div>
+          <h3>Annual General Meeting 2026</h3>
+          <p>Our Annual General Meeting is scheduled for December 2026. The exact date will be communicated to all members in due course. All members are encouraged to attend and participate.</p>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-thumb"><i class="fas fa-gift"></i></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-tag">Rates Update</span>
+            <span>February 26, 2026</span>
+          </div>
+          <h3>Updated Fixed Deposit Rates — Effective Immediately</h3>
+          <p>We have revised our Fixed Deposit rates. Deposits of GH₵2,000–499,999.99 earn 5%–6% p.a., GH₵500,000–999,999.99 earn 6%–7% p.a., and GH₵1,000,000 and above earn up to 8% p.a. (rates vary by term: 91, 182, or 365 days). Visit any branch to lock in your deposit today.</p>
+          <a href="#calculators" class="news-link">Calculate Returns <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-thumb"><i class="fas fa-mobile-alt"></i></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-tag">Technology</span>
+            <span>March 2, 2026</span>
+          </div>
+          <h3>USSD Banking — Coming Soon</h3>
+          <p>We are working on a USSD banking service that will allow you to check balances, transfer funds, and manage your account directly from your phone — no internet required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<div class="container">
+  <div class="cta-banner reveal">
+    <h2>Ready to Join The Happy Family?</h2>
+    <p>Start your journey to financial growth and security with St. Martin De Porres Co-operative Credit Union.</p>
+    <a href="#contact" class="btn btn-primary"><i class="fas fa-user-plus"></i> Become a Member Today</a>
+  </div>
+</div>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact section-padding" id="contact" style="padding-top: 160px;">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">We'd Love to Hear From You</h2>
+        <p class="section-subtitle">Visit us at our head office or any of our branches. Our team is ready to assist you with all your financial needs.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4>Head Office</h4>
+            <p>Atonsu, Monaco Junction, Kumasi<br>Ashanti Region, Ghana</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+233202290588" style="color:var(--gray-600);text-decoration:none;">020 229 0588</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/message/YMKPBDBY4DVIL1" target="_blank" style="color:var(--gray-600);text-decoration:none;">Chat with us on WhatsApp</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:enquiries@stmartindeporresccu.com" style="color:var(--gray-600);text-decoration:none;">enquiries@stmartindeporresccu.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Monday – Friday: 8:00 AM – 5:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>Sunday: Closed</p>
+          </div>
+        </div>
+
+        <!-- Branch Locations -->
+        <div style="margin-top:32px;padding:24px;background:var(--gray-50);border-radius:var(--radius-md);border:1px solid var(--gray-100);">
+          <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--primary-dark);margin-bottom:16px;display:flex;align-items:center;gap:8px;"><i class="fas fa-code-branch" style="color:var(--accent);font-size:14px;"></i> Our Branches</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="font-size:13px;color:var(--gray-600);display:flex;align-items:center;gap:6px;"><i class="fas fa-circle" style="font-size:5px;color:var(--primary);"></i> Aputuogya</div>
+            <div style="font-size:13px;color:var(--gray-600);display:flex;align-items:center;gap:6px;"><i class="fas fa-circle" style="font-size:5px;color:var(--primary);"></i> Esereso</div>
+            <div style="font-size:13px;color:var(--gray-600);display:flex;align-items:center;gap:6px;"><i class="fas fa-circle" style="font-size:5px;color:var(--primary);"></i> Jachie</div>
+            <div style="font-size:13px;color:var(--gray-600);display:flex;align-items:center;gap:6px;"><i class="fas fa-circle" style="font-size:5px;color:var(--primary);"></i> Abinkyi Market</div>
+            <div style="font-size:13px;color:var(--gray-600);display:flex;align-items:center;gap:6px;"><i class="fas fa-circle" style="font-size:5px;color:var(--primary);"></i> Yaase Agency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal">
+        <h3>Send Us a Message</h3>
+        <form class="contact-form" id="contactForm" onsubmit="submitContactForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Kwame Mensah" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="020 XXX XXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="kwame@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="How can we help?">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Type your message here..."></textarea>
+          </div>
+          <button type="submit" id="contactSubmitBtn" class="btn-calc" style="border-radius: 50px;">Send Message <i class="fas fa-paper-plane" style="margin-left:8px"></i></button>
+          <div id="contactSuccess" style="display:none;margin-top:16px;padding:14px 18px;background:#e8f5e9;border-radius:var(--radius-md);color:#2e7d32;font-weight:500;">
+            <i class="fas fa-check-circle" style="margin-right:8px;"></i>Thank you! Your message has been received. We will get back to you shortly.
+          </div>
+          <div id="contactError" style="display:none;margin-top:16px;padding:14px 18px;background:#fdecea;border-radius:var(--radius-md);color:#c62828;font-weight:500;">
+            <i class="fas fa-exclamation-circle" style="margin-right:8px;"></i>Something went wrong. Please try again or contact us directly via WhatsApp.
+          </div>
+        </form>
+
+        <!-- Google Map -->
+        <div style="margin-top:28px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--gray-100);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.7!2d-1.638!3d6.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4e9b4dcbdae112b2!2sAtonsu%20Monaco!5e0!3m2!1sen!2sgh!4v1"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a href="https://maps.app.goo.gl/PqSMnNYU2cFEy7MY8" target="_blank"
+            style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;background:var(--primary);color:white;text-decoration:none;font-size:14px;font-weight:600;">
+            <i class="fas fa-directions"></i> Get Directions on Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<div class="whatsapp-float">
+  <div class="whatsapp-tooltip">Chat with us on WhatsApp!</div>
+  <a href="https://wa.me/message/YMKPBDBY4DVIL1" target="_blank" class="whatsapp-float-btn" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="SMDPCCU" id="footer-logo-img">
+        <p>A dynamic financial institution committed to sustaining the trust, confidence and well-being of our membership. The Happy Family.</p>
+        <div class="footer-socials">
+          <a href="https://web.facebook.com/profile.php?id=61584511884792" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/stmartindeporresccu" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@stmartindeporresccu" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/message/YMKPBDBY4DVIL1" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#loans-savings">Personal Loans</a></li>
+          <li><a href="#loans-savings">Business Loans</a></li>
+          <li><a href="#loans-savings">Savings Accounts</a></li>
+          <li><a href="#loans-savings">Fixed Deposits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+233202290588"><i class="fas fa-phone" style="margin-right:6px;font-size:11px;"></i> 020 229 0588</a></li>
+          <li><a href="mailto:enquiries@stmartindeporresccu.com"><i class="fas fa-envelope" style="margin-right:6px;font-size:11px;"></i> enquiries@stmartindeporresccu.com</a></li>
+          <li><a href="https://maps.app.goo.gl/PqSMnNYU2cFEy7MY8" target="_blank"><i class="fas fa-map-marker-alt" style="margin-right:6px;font-size:11px;"></i> Atonsu, Monaco Junction, Kumasi</a></li>
+          <li><a href="https://wa.me/message/YMKPBDBY4DVIL1" target="_blank"><i class="fab fa-whatsapp" style="margin-right:6px;font-size:11px;"></i> WhatsApp Chat</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
