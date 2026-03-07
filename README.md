@@ -2,7 +2,7 @@
 
 ## Project Structure
 
-```
+
 smdpccu-website/
 ├── index.html          # Main HTML file
 ├── css/

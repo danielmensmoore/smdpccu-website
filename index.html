@@ -28,6 +28,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#loans-savings">Loans & Savings</a></li>
       <li><a href="#calculators">Tools</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact" class="btn-nav">Contact Us</a></li>
     </ul>
@@ -378,16 +379,16 @@
         <div class="form-group">
           <label>Loan Type</label>
           <select id="loanType" onchange="updateLoanFields()">
-            <option value="within_savings">Loan Within Savings (up to savings, 1% per monthreducing)</option>
-            <option value="normal_2x">Normal Loan – 2× savings (3% per monthreducing)</option>
-            <option value="normal_3x">Normal Loan – 3× savings (4% per monthreducing)</option>
-            <option value="susu_2x">Susu Loan – 2× savings (3% per monthstraight-line)</option>
-            <option value="susu_3x">Susu Loan – 3× savings (4% per monthstraight-line)</option>
-            <option value="business">Business Loan (5× savings, 5% per monthreducing)</option>
-            <option value="salary">Salary Workers Loan (40% DSR, 4% per monthreducing)</option>
-            <option value="controller">Controller / DAS Loan (4% per monthreducing)</option>
-            <option value="emergency">Emergency Loan (20% of assets, 5% per monthreducing)</option>
-            <option value="special">Special Purpose Loan (20% of assets, 5% per monthreducing)</option>
+            <option value="within_savings">Loan Within Savings (up to savings, 1% per month, reducing)</option>
+            <option value="normal_2x">Normal Loan – 2× savings (3% per month, reducing)</option>
+            <option value="normal_3x">Normal Loan – 3× savings (4% per month, reducing)</option>
+            <option value="susu_2x">Susu Loan – 2× savings (3% per month, straight-line)</option>
+            <option value="susu_3x">Susu Loan – 3× savings (4% per month, straight-line)</option>
+            <option value="business">Business Loan (5× savings, 5% per month, reducing)</option>
+            <option value="salary">Salary Workers Loan (40% DSR, 4% per month, reducing)</option>
+            <option value="controller">Controller / DAS Loan (4% per month, reducing)</option>
+            <option value="emergency">Emergency Loan (20% of assets, 5% per month, reducing)</option>
+            <option value="special">Special Purpose Loan (20% of assets, 5% per month, reducing)</option>
           </select>
         </div>
         <div class="form-group" id="savingsGroup">
@@ -513,6 +514,83 @@
           <p>We are working on a USSD banking service that will allow you to check balances, transfer funds, and manage your account directly from your phone — no internet required.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="gallery section-padding" id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="section-label">Photo Gallery</div>
+      <h2 class="section-title">Moments That Matter</h2>
+      <p class="section-subtitle">A glimpse into the work we do in our communities and the lives we touch as The Happy Family.</p>
+    </div>
+
+    <div class="gallery-tabs reveal">
+      <button class="gallery-tab active" onclick="filterGallery('all')">All</button>
+      <button class="gallery-tab" onclick="filterGallery('community-outreach')">Community Outreach</button>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Featured: Yaase Community Outreach album -->
+      <div class="gallery-item featured reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/1.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Yaase Community Outreach</div>
+          <div class="gallery-overlay-date">2025 &bull; 48 Photos — Click to Browse</div>
+        </div>
+      </div>
+
+      <!-- Col 3 row 1 -->
+      <div class="gallery-item reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/IMG_0229.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Community Outreach</div>
+        </div>
+      </div>
+
+      <!-- Col 4 row 1 -->
+      <div class="gallery-item reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/IMG_0240.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Community Outreach</div>
+        </div>
+      </div>
+
+      <!-- Col 3 row 2 -->
+      <div class="gallery-item reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/IMG_0252.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Community Outreach</div>
+        </div>
+      </div>
+
+      <!-- Col 4 row 2 -->
+      <div class="gallery-item reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/IMG_0263.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Community Outreach</div>
+        </div>
+      </div>
+
+      <!-- Row 3: two wide items -->
+      <div class="gallery-item wide reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/IMG_0280.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Community Outreach</div>
+        </div>
+      </div>
+
+      <div class="gallery-item wide reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
+        <img src="images/Yaase%20Community%20Outreach/IMG_0295.jpg" alt="Yaase Community Outreach">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">Community Outreach</div>
+          <div class="gallery-overlay-date">Click any photo to browse all 48 images</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -689,6 +767,15 @@
     </div>
   </div>
 </footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close"><i class="fas fa-times"></i></button>
+  <button class="lightbox-nav prev" onclick="navLightbox(-1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <button class="lightbox-nav next" onclick="navLightbox(1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
