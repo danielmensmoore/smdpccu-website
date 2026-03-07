@@ -6,6 +6,28 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
 
+// ===== SCROLL SPY (active nav link) =====
+(function () {
+  const sectionIds = ['home', 'about', 'services', 'loans-savings', 'calculators', 'gallery', 'news', 'contact'];
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 120;
+    let current = 'home';
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    document.querySelectorAll('.nav-links > li > a').forEach(a => {
+      a.classList.remove('active');
+      const href = a.getAttribute('href');
+      if (href === '#' + current) a.classList.add('active');
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+})();
+
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
