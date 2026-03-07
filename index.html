@@ -24,10 +24,38 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#loans-savings">Loans & Savings</a></li>
-      <li><a href="#calculators">Tools</a></li>
+      <li class="has-dropdown">
+        <a href="team.html">Team <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="team.html#team"><i class="fas fa-user-tie"></i> Management Team</a></li>
+          <li><a href="team.html#board"><i class="fas fa-briefcase"></i> Board of Directors</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="#services"><i class="fas fa-piggy-bank"></i> Savings Accounts</a></li>
+          <li><a href="#services"><i class="fas fa-hand-holding-usd"></i> Affordable Loans</a></li>
+          <li><a href="#services"><i class="fas fa-mobile-alt"></i> Mobile Banking</a></li>
+          <li><a href="#services"><i class="fas fa-users"></i> Susu Collection</a></li>
+          <li><a href="#services"><i class="fas fa-shield-alt"></i> Insurance Services</a></li>
+          <li><a href="#services"><i class="fas fa-graduation-cap"></i> Financial Education</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#loans-savings">Loans & Savings <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="#loans-savings" onclick="switchTab('loans')"><i class="fas fa-hand-holding-usd"></i> Loan Products</a></li>
+          <li><a href="#loans-savings" onclick="switchTab('savings')"><i class="fas fa-wallet"></i> Savings Products</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#calculators">Tools <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="#calculators"><i class="fas fa-calculator"></i> Loan Eligibility Checker</a></li>
+          <li><a href="#calculators"><i class="fas fa-chart-line"></i> Fixed Deposit Calculator</a></li>
+        </ul>
+      </li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact" class="btn-nav">Contact Us</a></li>

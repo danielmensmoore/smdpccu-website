@@ -104,6 +104,71 @@ body {
   font-size: 24px; color: var(--primary); cursor: pointer;
 }
 
+/* ========== NAV DROPDOWNS ========== */
+.has-dropdown { position: relative; }
+
+.has-dropdown > a { display: flex; align-items: center; gap: 5px; }
+
+.has-dropdown > a .fa-chevron-down {
+  font-size: 9px; transition: transform 0.25s ease;
+  color: var(--gray-400);
+}
+.has-dropdown:hover > a .fa-chevron-down { transform: rotate(180deg); }
+
+.dropdown {
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: white; border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border: 1px solid var(--gray-100);
+  min-width: 220px; list-style: none; padding: 8px 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1100; pointer-events: none;
+}
+.dropdown::before {
+  content: ''; position: absolute; top: -6px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 11px; height: 11px; background: white;
+  border-left: 1px solid var(--gray-100);
+  border-top: 1px solid var(--gray-100);
+}
+.has-dropdown:hover .dropdown {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: all;
+}
+
+.dropdown li a {
+  display: flex !important; align-items: center; gap: 10px;
+  padding: 10px 20px !important;
+  font-size: 14px !important; color: var(--gray-800) !important;
+  border-radius: 0 !important; background: transparent !important;
+  white-space: nowrap;
+}
+.dropdown li a:hover {
+  background: var(--gray-50) !important;
+  color: var(--primary) !important;
+}
+.dropdown li a i { width: 16px; font-size: 13px; color: var(--primary); flex-shrink: 0; }
+
+.dropdown-divider {
+  height: 1px; background: var(--gray-100); margin: 6px 0;
+}
+
+@media (max-width: 968px) {
+  .has-dropdown { position: static; }
+  .dropdown {
+    position: static; opacity: 1; visibility: visible;
+    transform: none; box-shadow: none; border: none;
+    border-left: 3px solid var(--gray-100);
+    padding: 2px 0; margin: 0 0 4px 16px; min-width: unset;
+    pointer-events: all; display: block;
+  }
+  .dropdown::before { display: none; }
+  .dropdown li a { padding: 8px 16px !important; font-size: 13px !important; }
+}
+
 /* ========== HERO ========== */
 .hero {
   position: relative; min-height: 100vh;
