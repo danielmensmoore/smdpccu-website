@@ -37,7 +37,7 @@
     margin-bottom: 28px;
   }
   .pdf-banner p { margin: 4px 0 0; font-size: 0.9rem; color: #555; }
-  .pdf-banner strong { color: var(--dark); }
+  .pdf-banner strong { color: var(--primary-dark); }
   .pdf-btn {
     display: inline-flex;
     align-items: center;
@@ -103,7 +103,7 @@
     border: 1px solid #cbd5e1;
     border-radius: 7px;
     font-size: 0.93rem;
-    color: var(--dark);
+    color: var(--gray-800);
     font-family: inherit;
     background: #fff;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -238,10 +238,38 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html#home">Home</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#loans-savings">Loans &amp; Savings</a></li>
-      <li><a href="index.html#calculators">Tools</a></li>
+      <li class="has-dropdown">
+        <a href="team.html">Team <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="team.html#team"><i class="fas fa-user-tie"></i> Management Team</a></li>
+          <li><a href="team.html#board"><i class="fas fa-briefcase"></i> Board of Directors</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#services">Services <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="index.html#services"><i class="fas fa-piggy-bank"></i> Savings Accounts</a></li>
+          <li><a href="index.html#services"><i class="fas fa-hand-holding-usd"></i> Affordable Loans</a></li>
+          <li><a href="index.html#services"><i class="fas fa-mobile-alt"></i> Mobile Banking</a></li>
+          <li><a href="index.html#services"><i class="fas fa-users"></i> Susu Collection</a></li>
+          <li><a href="index.html#services"><i class="fas fa-shield-alt"></i> Insurance Services</a></li>
+          <li><a href="index.html#services"><i class="fas fa-graduation-cap"></i> Financial Education</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#loans-savings">Loans &amp; Savings <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="index.html#loans-savings"><i class="fas fa-hand-holding-usd"></i> Loan Products</a></li>
+          <li><a href="index.html#loans-savings"><i class="fas fa-wallet"></i> Savings Products</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#calculators">Tools <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="index.html#calculators"><i class="fas fa-calculator"></i> Loan Eligibility Checker</a></li>
+          <li><a href="index.html#calculators"><i class="fas fa-chart-line"></i> Fixed Deposit Calculator</a></li>
+        </ul>
+      </li>
       <li><a href="index.html#news">News</a></li>
       <li><a href="index.html#contact">Contact Us</a></li>
       <li><a href="join.html" class="btn-nav active">Join Us</a></li>
@@ -708,7 +736,7 @@
 </section>
 
 <!-- ========== FOOTER ========== -->
-<footer style="background:var(--dark);color:#fff;padding:30px 0;text-align:center;">
+<footer style="background:var(--primary-dark);color:#fff;padding:30px 0;text-align:center;">
   <div class="container">
     <p style="margin:0 0 8px;">&copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. All rights reserved.</p>
     <a href="index.html" style="color:rgba(255,255,255,0.65);font-size:0.88rem;text-decoration:none;">← Back to Home</a>
