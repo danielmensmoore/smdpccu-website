@@ -56,6 +56,7 @@
           <li><a href="#calculators"><i class="fas fa-chart-line"></i> Fixed Deposit Calculator</a></li>
         </ul>
       </li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact Us</a></li>
       <li><a href="join.html" class="btn-nav">Join Us</a></li>
@@ -509,6 +510,19 @@
     </div>
     <div class="news-grid">
       <div class="news-card reveal">
+        <div class="news-thumb" style="padding:0;overflow:hidden;">
+          <img src="images/cua-meeting-1.jpg" alt="CUA Meeting" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-tag">Event</span>
+            <span>March 10, 2026</span>
+          </div>
+          <h3>CUA Visits SMDPCCU Board &amp; Management</h3>
+          <p>The Credit Union Association of Ghana (CUA) paid a visit to St. Martin De Porres Co-operative Credit Union, meeting with the Board of Directors and Management Team to discuss progress, governance, and the way forward for the credit union.</p>
+        </div>
+      </div>
+      <div class="news-card reveal">
         <div class="news-thumb"><i class="fas fa-bullhorn"></i></div>
         <div class="news-body">
           <div class="news-meta">
@@ -557,10 +571,34 @@
 
     <div class="gallery-tabs reveal">
       <button class="gallery-tab active" onclick="filterGallery('all')">All</button>
+      <button class="gallery-tab" onclick="filterGallery('cua-meeting')">CUA Meeting</button>
       <button class="gallery-tab" onclick="filterGallery('community-outreach')">Community Outreach</button>
     </div>
 
     <div class="gallery-grid">
+
+      <!-- CUA Meeting Photos -->
+      <div class="gallery-item featured reveal" data-type="photos cua-meeting" data-title="CUA Board Meeting" data-date="2026">
+        <img src="images/cua-meeting-1.jpg" alt="CUA Meeting with Board and Management">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">CUA Board & Management Meeting</div>
+          <div class="gallery-overlay-date">2026 &bull; Credit Union Association of Ghana Visit</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-type="photos cua-meeting" data-title="CUA Board Meeting" data-date="2026">
+        <img src="images/cua-meeting-2.jpg" alt="CUA Meeting with Board and Management">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">CUA Meeting</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-type="photos cua-meeting" data-title="CUA Board Meeting" data-date="2026">
+        <img src="images/cua-meeting-3.jpg" alt="CUA Meeting with Board and Management">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-title">CUA Meeting</div>
+        </div>
+      </div>
 
       <!-- Featured: Yaase Community Outreach album -->
       <div class="gallery-item featured reveal" data-album="community-outreach" data-type="photos community-outreach" data-title="Yaase Community Outreach" data-date="2025" onclick="openLightbox(0)">
