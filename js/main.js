@@ -92,18 +92,18 @@ function switchTab(tab) {
   }
 }
 
-// ===== LOAN RULES DATA (per official Loans Policy, December 2024) =====
+// ===== LOAN RULES DATA (updated per CUA directive, April 2026) =====
 const loanRules = {
-  within_savings: { type: 'cap_at_savings', method: 'reducing_balance', monthly_rate: 0.01, label: 'Loan Within Savings', maxTenor: 12 },
-  normal_2x:      { multiplier: 2, basis: 'savings', method: 'reducing_balance', monthly_rate: 0.03, label: 'Normal Loan (2× savings)', maxTenor: 24 },
-  normal_3x:      { multiplier: 3, basis: 'savings', method: 'reducing_balance', monthly_rate: 0.04, label: 'Normal Loan (3× savings)', maxTenor: 24 },
-  susu_2x:        { multiplier: 2, basis: 'savings', method: 'straight_line', monthly_rate: 0.03, label: 'Susu Loan (2× savings)', maxTenor: 12, ceiling: 150000 },
-  susu_3x:        { multiplier: 3, basis: 'savings', method: 'straight_line', monthly_rate: 0.04, label: 'Susu Loan (3× savings)', maxTenor: 12, ceiling: 150000 },
-  business:       { multiplier: 5, basis: 'savings', method: 'reducing_balance', monthly_rate: 0.05, label: 'Business Loan', maxTenor: 24 },
-  salary:         { type: 'dsr', dsr: 0.4, method: 'reducing_balance', monthly_rate: 0.04, label: 'Salary Workers Loan', maxTenor: 18 },
-  controller:     { type: 'affordability', method: 'reducing_balance', monthly_rate: 0.04, label: 'Controller / DAS Loan', maxTenor: 18 },
-  emergency:      { type: 'total_assets', assets_pct: 0.20, method: 'reducing_balance', monthly_rate: 0.05, label: 'Emergency Loan', maxTenor: 6, ceiling: 500000 },
-  special:        { type: 'total_assets', assets_pct: 0.20, method: 'reducing_balance', monthly_rate: 0.05, label: 'Special Purpose Loan', maxTenor: 6, ceiling: 500000 }
+  within_savings: { type: 'cap_at_savings', method: 'reducing_balance', monthly_rate: 0.01,   label: 'Loan Within Savings', maxTenor: 12 },
+  normal_2x:      { multiplier: 2, basis: 'savings', method: 'reducing_balance', monthly_rate: 0.024, label: 'Normal Loan (2× savings)', maxTenor: 24 },
+  normal_3x:      { multiplier: 3, basis: 'savings', method: 'reducing_balance', monthly_rate: 0.034, label: 'Long Term Loan (3× savings)', maxTenor: 24 },
+  susu_2x:        { multiplier: 2, basis: 'savings', method: 'straight_line', monthly_rate: 0.024, label: 'Susu Loan (2× savings)', maxTenor: 12, ceiling: 150000 },
+  susu_3x:        { multiplier: 3, basis: 'savings', method: 'straight_line', monthly_rate: 0.034, label: 'Susu Loan (3× savings)', maxTenor: 12, ceiling: 150000 },
+  business:       { multiplier: 5, basis: 'savings', method: 'reducing_balance', monthly_rate: 0.044, label: 'Business Loan', maxTenor: 24 },
+  salary:         { type: 'dsr', dsr: 0.4, method: 'reducing_balance', monthly_rate: 0.024, label: 'Salary Workers Loan', maxTenor: 18 },
+  controller:     { type: 'affordability', method: 'reducing_balance', monthly_rate: 0.024, label: 'Controller / DAS Loan', maxTenor: 18 },
+  emergency:      { type: 'total_assets', assets_pct: 0.20, method: 'reducing_balance', monthly_rate: 0.034, label: 'Emergency Loan', maxTenor: 6, ceiling: 500000 },
+  special:        { type: 'total_assets', assets_pct: 0.20, method: 'reducing_balance', monthly_rate: 0.044, label: 'Special Purpose Loan', maxTenor: 6, ceiling: 500000 }
 };
 
 // ===== FD TIERED RATES =====
