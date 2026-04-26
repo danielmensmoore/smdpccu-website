@@ -207,13 +207,13 @@ function checkLoanEligibility() {
   if (rule.method === 'reducing_balance') {
     monthlyPayment = maxAmount * r * Math.pow(1 + r, term) / (Math.pow(1 + r, term) - 1);
     totalInterest = (monthlyPayment * term) - maxAmount;
-    rateDisplay = (r * 100).toFixed(0) + '% per month (reducing balance)';
+    rateDisplay = parseFloat((r * 100).toFixed(2)) + '% per month (reducing balance)';
   } else {
     // straight-line (flat): interest on full principal each month
     const interest = maxAmount * r;
     monthlyPayment = (maxAmount / term) + interest;
     totalInterest = interest * term;
-    rateDisplay = (r * 100).toFixed(0) + '% per month (straight-line)';
+    rateDisplay = parseFloat((r * 100).toFixed(2)) + '% per month (straight-line)';
   }
 
   document.getElementById('loanResultValue').textContent = 'GH₵ ' + maxAmount.toLocaleString('en', {maximumFractionDigits: 2});
