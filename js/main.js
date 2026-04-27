@@ -106,11 +106,9 @@ const loanRules = {
   special:        { type: 'total_assets', assets_pct: 0.20, method: 'reducing_balance', monthly_rate: 0.044, label: 'Special Purpose Loan', maxTenor: 6, ceiling: 500000 }
 };
 
-// ===== FD TIERED RATES =====
+// ===== FD RATES (effective April 27, 2026) =====
 const fdTiers = [
-  { min: 2000, max: 499999.99, rates: { 91: 5, 182: 5.5, 365: 6 } },
-  { min: 500000, max: 999999.99, rates: { 91: 6, 182: 6.5, 365: 7 } },
-  { min: 1000000, max: null, rates: { 91: 6.5, 182: 7, 365: 8 } }
+  { min: 2000, max: 1000000, rates: { 91: 2, 182: 3, 365: 4 } }
 ];
 
 function updateLoanFields() {
@@ -291,7 +289,7 @@ function calculateFD() {
      Interest earned: <strong>GH₵ ${interest.toLocaleString('en', {maximumFractionDigits: 2})}</strong><br>
      Rate: <strong>${rate}% p.a.</strong> &bull; Term: <strong>${days} days</strong><br>
      Maturity date: <strong>${maturityDateStr}</strong><br>
-     <small style="color:var(--gray-400)">*Rates effective February 2026. Simple interest basis.</small>`;
+     <small style="color:var(--gray-400)">*Rates effective 27th April 2026. Simple interest basis.</small>`;
   document.getElementById('fdResult').classList.add('show');
 }
 
