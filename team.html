@@ -72,7 +72,7 @@
       <!-- Internal Auditor -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <img src="images/philip anabila.jpeg" alt="Mr. Philip Anabila">
+          <img src="images/philip2.jpeg" alt="Mr. Philip Anabila">
         </div>
         <div class="team-info">
           <h3>Mr. Philip Anabila</h3>
@@ -96,7 +96,7 @@
       <!-- IT Manager -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <img src="images/Daniel Opoku Mensah.JPG.jpeg" alt="Mr. Daniel Opoku Mensah">
+          <img src="images/dan.jpeg" alt="Mr. Daniel Opoku Mensah">
         </div>
         <div class="team-info">
           <h3>Mr. Daniel Opoku Mensah</h3>
@@ -168,10 +168,7 @@
       <!-- Yaase Agency Manager -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
+          <img src="images/gooshie yaase.jpeg" alt="Mr. Daniel Kofi Gooshie">
         </div>
         <div class="team-info">
           <h3>Mr. Daniel Kofi Gooshie</h3>
@@ -212,28 +209,24 @@
       <!-- Chairman -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
+          <img src="images/bod chairman 2.jpeg" alt="Mr. Matthew Seuyellu">
         </div>
         <div class="team-info">
           <h3>Mr. Matthew Seuyellu</h3>
           <div class="team-role">Chairman</div>
+          <div class="team-accolades">Presides over all board meetings, provides overall governance leadership, and ensures the credit union operates in the best interest of members.</div>
         </div>
       </div>
 
       <!-- Vice Chairman -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
+          <img src="images/bawa vice.jpeg" alt="Mr. Charles Bawa">
         </div>
         <div class="team-info">
           <h3>Mr. Charles Bawa</h3>
           <div class="team-role">Vice Chairman</div>
+          <div class="team-accolades">Supports the Chairman in governance duties, acts in the Chairman's absence, and contributes to strategic board decisions and member oversight.</div>
         </div>
       </div>
 
@@ -248,20 +241,19 @@
         <div class="team-info">
           <h3>Mr. Joseph Otchere</h3>
           <div class="team-role">Treasurer</div>
+          <div class="team-accolades">Oversees the financial affairs of the board, monitors budgets and expenditures, and ensures sound financial reporting and accountability to members.</div>
         </div>
       </div>
 
       <!-- Secretary -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
+          <img src="images/bod secretary.jpeg" alt="Mrs. Perpetual Adu-Nyarko">
         </div>
         <div class="team-info">
           <h3>Mrs. Perpetual Adu-Nyarko</h3>
           <div class="team-role">Secretary</div>
+          <div class="team-accolades">Maintains accurate board records, manages correspondence, prepares meeting minutes, and ensures proper documentation of all board resolutions.</div>
         </div>
       </div>
 
@@ -276,34 +268,31 @@
         <div class="team-info">
           <h3>Mrs. Felicia Amoah Dapaah</h3>
           <div class="team-role">Assistant Secretary</div>
+          <div class="team-accolades">Assists the Secretary in administrative duties, supports board documentation, and ensures smooth communication between the board and management.</div>
         </div>
       </div>
 
       <!-- Assistant Treasurer -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
+          <img src="images/isaac asirifi.jpeg" alt="Mr. Isaac Asirifi">
         </div>
         <div class="team-info">
           <h3>Mr. Isaac Asirifi</h3>
           <div class="team-role">Assistant Treasurer</div>
+          <div class="team-accolades">Supports the Treasurer in financial oversight, assists with budget monitoring, and ensures financial records are accurate and transparently reported.</div>
         </div>
       </div>
 
       <!-- Member -->
       <div class="team-card reveal">
         <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
+          <img src="images/bod member.jpeg" alt="Mr. Joseph Acheampong">
         </div>
         <div class="team-info">
           <h3>Mr. Joseph Acheampong</h3>
           <div class="team-role">Board Member</div>
+          <div class="team-accolades">Participates in board deliberations, contributes to policy development, and represents the interests of members in all governance and strategic decisions.</div>
         </div>
       </div>
 
@@ -315,6 +304,44 @@
 <footer style="background:var(--primary-dark);color:rgba(255,255,255,0.6);text-align:center;padding:24px;font-size:14px;">
   <p style="margin:0;">&copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. &mdash; <a href="index.html" style="color:var(--secondary);text-decoration:none;">Back to Home</a></p>
 </footer>
+
+<!-- Photo Lightbox Modal -->
+<div class="photo-modal" id="photoModal">
+  <button class="photo-modal-close" onclick="closePhotoModal()"><i class="fas fa-times"></i></button>
+  <img id="photoModalImg" src="" alt="">
+  <div class="photo-modal-name" id="photoModalName"></div>
+</div>
+
+<script>
+  // Add overlay + lightbox to every team photo with an image
+  document.querySelectorAll('.team-photo').forEach(function(photo) {
+    const img = photo.querySelector('img');
+    if (!img) return;
+    const overlay = document.createElement('div');
+    overlay.className = 'team-photo-overlay';
+    overlay.innerHTML = '<i class="fas fa-expand"></i>';
+    photo.appendChild(overlay);
+    const name = photo.closest('.team-card').querySelector('h3')?.textContent || '';
+    photo.style.cursor = 'pointer';
+    photo.addEventListener('click', function() {
+      document.getElementById('photoModalImg').src = img.src;
+      document.getElementById('photoModalName').textContent = name;
+      document.getElementById('photoModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closePhotoModal() {
+    document.getElementById('photoModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('photoModal').addEventListener('click', function(e) {
+    if (e.target === this) closePhotoModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePhotoModal();
+  });
+</script>
 
 <script src="js/main.js"></script>
 <!--Start of Tawk.to Script-->
