@@ -9,7 +9,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green:#1a2e8b;--green-dark:#0f1f6b;--green-light:#2343ae;--gold:#c8102e;--gold-light:#e0253f;
+  --green:#1a2e8b;--green-dark:#0f1f6b;--green-light:#2343ae;--gold:#c8933a;--gold-light:#e8b060;
   --cream:#f4f6fb;--dark:#080d2a;--charcoal:#0d1440;--text:#1e2d4a;--muted:#5b6880;
   --white:#fff;--border:#d5daea;
 }
@@ -133,13 +133,18 @@ footer{background:var(--dark);padding:64px 5% 28px}
   .foot-grid{grid-template-columns:1fr 1fr}
   .topbar-left{display:none}
   .nav-hours{display:none}
-  .subnav-links li:nth-child(n+5){display:none}
+  .subnav-links{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}
+  .subnav-links::-webkit-scrollbar{display:none}
+  .subnav-links a{white-space:nowrap;padding:14px 14px}
 }
 @media(max-width:640px){
   .topbar-right{display:none}
   .team-grid{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column;gap:8px;text-align:center}
+  .logo-text .name{font-size:14px}
+  .team-sec{padding:52px 5%}
+  .page-hero{padding:60px 5% 48px}
 }
 @media(max-width:400px){
   .team-grid{grid-template-columns:1fr}
