@@ -3,347 +3,516 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Management Team — St. Martin De Porres Co-operative Credit Union Ltd.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Our Team — St. Martin De Porres Co-operative Credit Union Ltd.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/styles.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1a2e8b;--green-dark:#0f1f6b;--green-light:#2343ae;--gold:#c8102e;--gold-light:#e0253f;
+  --cream:#f4f6fb;--dark:#080d2a;--charcoal:#0d1440;--text:#1e2d4a;--muted:#5b6880;
+  --white:#fff;--border:#d5daea;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* TOP BAR */
+.topbar{background:var(--charcoal);padding:9px 5%;display:flex;justify-content:space-between;align-items:center}
+.topbar-left{font-size:13px;color:rgba(255,255,255,.55);font-weight:300;letter-spacing:.01em}
+.topbar-right{display:flex;gap:28px;align-items:center}
+.topbar-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.6);font-weight:300}
+.topbar-item svg{width:13px;height:13px;stroke:var(--gold);flex-shrink:0}
+.topbar-item a{color:rgba(255,255,255,.7);transition:color .2s}
+.topbar-item a:hover{color:var(--gold-light)}
+
+/* MAIN NAV */
+.mainnav{background:var(--white);padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.logo{display:flex;align-items:center;gap:12px;padding:14px 0}
+.logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2.5px solid var(--green)}
+.logo-text .name{font-family:'Playfair Display',serif;font-size:17px;color:var(--green);font-weight:700;line-height:1.1}
+.logo-text .sub{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.06em;text-transform:uppercase}
+.nav-hours{text-align:center;font-size:13px}
+.nav-hours .label{color:var(--muted);font-weight:400;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.nav-hours .time{color:var(--green);font-weight:600;font-size:14px}
+.nav-join{background:var(--green);color:var(--white);font-size:13px;font-weight:600;padding:11px 28px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;transition:background .2s;display:inline-block}
+.nav-join:hover{background:var(--green-light)}
+
+/* TICKER */
+.ticker-wrap{background:var(--green-dark);padding:7px 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;animation:tick 55s linear infinite}
+.ticker-inner span{padding:0 40px;font-size:12.5px;color:rgba(255,255,255,.88);font-weight:500;letter-spacing:.02em}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SUB NAV */
+.subnav{background:var(--green);padding:0 5%;display:flex;align-items:center;justify-content:space-between}
+.subnav-links{display:flex;list-style:none}
+.subnav-links a{color:rgba(255,255,255,.8);font-size:13.5px;font-weight:400;padding:14px 18px;display:block;letter-spacing:.02em;transition:color .2s,background .2s;border-bottom:2px solid transparent}
+.subnav-links a:hover,.subnav-links a.active{color:var(--white);border-bottom-color:var(--gold)}
+
+/* SECTION BASE */
+.s-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.s-label::before{content:'';width:20px;height:2px;background:var(--gold);border-radius:1px}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--green-dark);line-height:1.18;letter-spacing:-.01em}
+.s-sub{color:var(--muted);font-size:15.5px;line-height:1.75;margin-top:14px;font-weight:300;max-width:600px}
+
+/* PAGE HERO */
+.page-hero{background:var(--green-dark);padding:80px 5% 64px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%);opacity:.5}
+.page-hero-content{position:relative;z-index:1}
+.page-hero .s-label{color:rgba(255,255,255,.7)}
+.page-hero .s-label::before{background:rgba(255,255,255,.4)}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--white);font-weight:700;margin:0 0 14px;line-height:1.15}
+.page-hero p{color:rgba(255,255,255,.72);font-size:15.5px;line-height:1.75;max-width:560px;margin:0 auto;font-weight:300}
+
+/* TEAM SECTIONS */
+.team-sec{padding:80px 5%}
+.team-sec.light{background:var(--white)}
+.team-sec.tinted{background:var(--cream)}
+.team-sec-header{margin-bottom:52px}
+
+/* TEAM GRID */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+
+/* TEAM CARD */
+.team-card{background:var(--white);border-radius:10px;border:1px solid var(--border);overflow:hidden;transition:box-shadow .3s,transform .3s}
+.team-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,46,139,.1)}
+.team-card.ceo-card{border-top:3px solid var(--gold)}
+
+.team-photo{height:260px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--green-dark),var(--green));cursor:pointer}
+.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease;display:block}
+.team-card:hover .team-photo img{transform:scale(1.05)}
+
+.team-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.2);gap:10px}
+.team-photo-placeholder i{font-size:60px}
+.team-photo-placeholder span{font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+
+.photo-hover{position:absolute;inset:0;background:rgba(15,31,107,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.photo-hover i{font-size:1.5rem;color:#fff;background:rgba(255,255,255,.15);width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.team-card:hover .photo-hover{opacity:1}
+
+/* CEO badge on photo */
+.ceo-badge{position:absolute;top:14px;right:14px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:20px;text-transform:uppercase;z-index:2}
+
+.team-info{padding:22px 20px 26px}
+.team-info h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--green-dark);margin-bottom:8px;line-height:1.3}
+.team-role{display:inline-block;background:rgba(26,46,139,.07);color:var(--green);font-size:10.5px;font-weight:700;padding:3px 11px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+.team-bio{font-size:13.5px;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* BOARD SECTION — cards on tinted bg */
+.team-sec.tinted .team-card{background:var(--white)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:64px 5% 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-brand .fn{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:12px}
+.foot-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.75;font-weight:300;max-width:270px}
+.foot-brand .gold{color:var(--gold)}
+.foot-col h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:10px}
+.foot-col a{color:rgba(255,255,255,.45);font-size:13.5px;font-weight:300;transition:color .2s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,.25);font-weight:300}
+.foot-reg{color:var(--gold);font-weight:500}
+
+/* PHOTO MODAL */
+.photo-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:24px}
+.photo-modal.open{display:flex}
+.photo-modal img{max-width:90vw;max-height:88vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.5);object-fit:contain}
+.photo-modal-close{position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.4rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.photo-modal-close:hover{background:rgba(255,255,255,.3)}
+.photo-modal-name{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#fff;font-size:0.95rem;font-weight:600;background:rgba(0,0,0,.5);padding:8px 22px;border-radius:50px;white-space:nowrap}
+
+/* SCROLL FADE */
+.sf{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.sf.in{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:960px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .topbar-left{display:none}
+  .nav-hours{display:none}
+  .subnav-links li:nth-child(n+5){display:none}
+}
+@media(max-width:640px){
+  .topbar-right{display:none}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:400px){
+  .team-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.jpg" alt="SMDPCCU Logo" id="nav-logo-img">
-      <div class="nav-logo-text">
-        <span class="nav-logo-name">St. Martin De Porres<br>Co-operative Credit Union</span>
-        <span class="nav-logo-tagline">The Happy Family</span>
-      </div>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="team.html" class="active">Team</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#loans-savings">Loans & Savings</a></li>
-      <li><a href="index.html#calculators">Tools</a></li>
-      <li><a href="index.html#news">News</a></li>
-      <li><a href="index.html#contact">Contact Us</a></li>
-      <li><a href="join.html" class="btn-nav">Join Us</a></li>
-    </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</nav>
-
-<!-- ========== PAGE HEADER ========== -->
-<div style="background:var(--primary);padding:100px 0 40px;text-align:center;">
-  <div class="container">
-    <div style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Leadership</div>
-    <h1 style="color:#fff;font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);margin:0 0 12px;">Our Leadership</h1>
-    <p style="color:rgba(255,255,255,0.8);max-width:560px;margin:0 auto;">Dedicated professionals and elected board members committed to serving our members with integrity, excellence, and innovation.</p>
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-left">Welcome to St. Martin De Porres Co-operative Credit Union</span>
+  <div class="topbar-right">
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 3.18a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.4a16 16 0 006.62 6.62l1.26-1.32a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 1.97z"/></svg>
+      <a href="tel:+233202290588">020 229 0588</a>
+    </div>
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:enquiries@stmartindeporresccu.com">enquiries@stmartindeporresccu.com</a>
+    </div>
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Atonsu, Monaco Junction, Kumasi
+    </div>
   </div>
 </div>
 
-<!-- ========== MANAGEMENT TEAM ========== -->
-<section class="team section-padding" id="team">
-  <div class="container">
-    <div class="team-header reveal" style="text-align:center;margin-bottom:48px;">
-      <div class="section-label">Management</div>
-      <h2 class="section-title">Management Team</h2>
-      <p class="section-subtitle">Our professional staff dedicated to the day-to-day operations and service delivery of the credit union.</p>
+<!-- MAIN NAV -->
+<div class="mainnav">
+  <a href="index.html" class="logo">
+    <img class="logo-img" src="images/logo.jpg" alt="SMDPCCU Logo">
+    <div class="logo-text">
+      <div class="name">St. Martin De Porres CCU</div>
+      <div class="sub">The Happy Family</div>
     </div>
-    <div class="team-grid">
+  </a>
+  <div class="nav-hours">
+    <div class="label">Opening Hours</div>
+    <div class="time">Mon &ndash; Fri: 8AM to 5PM &nbsp;|&nbsp; Sat: 9AM to 1PM</div>
+  </div>
+  <a href="join.html" class="nav-join">Join Us</a>
+</div>
 
-      <!-- CEO -->
-      <div class="team-card ceo-card reveal">
-        <div class="team-photo">
-          <img src="images/ceo.jpeg" alt="Mr. Justice Apenkwah, CA">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Justice Apenkwah, CA</h3>
-          <div class="team-role">Chief Executive Officer</div>
-          <div class="team-accolades">Provides strategic vision and leadership for SMDPCCU, driving growth, member satisfaction, and institutional excellence.</div>
-        </div>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span>&#9670; NEW RATES: Normal Loan 2.4% p.m. | Fixed Deposit up to 4% p.a. &ndash; Effective 27th April 2026</span>
+    <span>&#9670; CUA Ghana visits SMDPCCU Board &amp; Management &ndash; strengthening cooperative partnerships</span>
+    <span>&#9670; Annual General Meeting 2026 &ndash; December 2026. All members encouraged to attend</span>
+    <span>&#9670; USSD Banking coming soon &ndash; manage your account without internet</span>
+    <span>&#9670; New website live! Open an account online today</span>
+    <span>&#9670; NEW RATES: Normal Loan 2.4% p.m. | Fixed Deposit up to 4% p.a. &ndash; Effective 27th April 2026</span>
+    <span>&#9670; CUA Ghana visits SMDPCCU Board &amp; Management &ndash; strengthening cooperative partnerships</span>
+    <span>&#9670; Annual General Meeting 2026 &ndash; December 2026. All members encouraged to attend</span>
+    <span>&#9670; USSD Banking coming soon &ndash; manage your account without internet</span>
+    <span>&#9670; New website live! Open an account online today</span>
+  </div>
+</div>
+
+<!-- SUB NAV -->
+<nav class="subnav">
+  <ul class="subnav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="team.html" class="active">Team</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="index.html#calculators">Tools</a></li>
+    <li><a href="index.html#news">News</a></li>
+    <li><a href="index.html#branches">Branches</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="s-label">Leadership</div>
+    <h1>Our Team</h1>
+    <p>Dedicated professionals and elected board members committed to serving our members with integrity, excellence, and care.</p>
+  </div>
+</div>
+
+<!-- MANAGEMENT TEAM -->
+<section class="team-sec light" id="team">
+  <div class="team-sec-header sf">
+    <div class="s-label">Management</div>
+    <h2 class="s-title">Management Team</h2>
+    <p class="s-sub">Our professional staff dedicated to the day-to-day operations and service delivery of the credit union.</p>
+  </div>
+  <div class="team-grid">
+
+    <div class="team-card ceo-card sf">
+      <div class="team-photo" data-name="Mr. Justice Apenkwah, CA">
+        <img src="images/ceo.jpeg" alt="Mr. Justice Apenkwah, CA">
+        <div class="ceo-badge">CEO</div>
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
       </div>
-
-      <!-- Internal Auditor -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/philip.jpeg" alt="Mr. Philip Anabila">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Philip Anabila</h3>
-          <div class="team-role">Internal Auditor</div>
-          <div class="team-accolades">Certified Internal Auditor. Ensures compliance, risk management, and financial integrity across all operations.</div>
-        </div>
+      <div class="team-info">
+        <h3>Mr. Justice Apenkwah, CA</h3>
+        <div class="team-role">Chief Executive Officer</div>
+        <p class="team-bio">Provides strategic vision and leadership for SMDPCCU, driving growth, member satisfaction, and institutional excellence.</p>
       </div>
-
-      <!-- Operations -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/otis.jpeg" alt="Mr. Otis Abu">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Otis Abu</h3>
-          <div class="team-role">Operations Manager</div>
-          <div class="team-accolades">Oversees day-to-day operations, ensuring efficient service delivery and member satisfaction across all branches.</div>
-        </div>
-      </div>
-
-      <!-- IT Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/dan.jpeg" alt="Mr. Daniel Opoku Mensah">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Daniel Opoku Mensah</h3>
-          <div class="team-role">I.T Manager</div>
-          <div class="team-accolades">Drives digital transformation, manages technology infrastructure, and ensures secure banking systems for members.</div>
-        </div>
-      </div>
-
-      <!-- Aputuogya Branch Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Mrs. Helina Owusu Ansah</h3>
-          <div class="team-role">Aputuogya Branch Manager</div>
-          <div class="team-accolades">Leads the Aputuogya branch with a focus on community engagement, member growth, and quality financial services.</div>
-        </div>
-      </div>
-
-      <!-- Esereso Branch Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Mrs. Saintina Kuuridong Zaato</h3>
-          <div class="team-role">Esereso Branch Manager</div>
-          <div class="team-accolades">Manages the Esereso branch, fostering strong member relationships and driving financial inclusion in the community.</div>
-        </div>
-      </div>
-
-      <!-- Jachie Branch Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Mr. Richard Obeng Kwarteng</h3>
-          <div class="team-role">Jachie Branch Manager</div>
-          <div class="team-accolades">Oversees the Jachie branch operations, committed to delivering excellent service and expanding membership.</div>
-        </div>
-      </div>
-
-      <!-- Abinkyi Market Branch Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Miss. Esther Abaare</h3>
-          <div class="team-role">Abinkyi Market Branch Manager</div>
-          <div class="team-accolades">Leads the Abinkyi Market branch, specialising in market trader services, susu collections, and business loans.</div>
-        </div>
-      </div>
-
-      <!-- Yaase Agency Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/gooshie yaase.jpeg" alt="Mr. Daniel Kofi Gooshie">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Daniel Kofi Gooshie</h3>
-          <div class="team-role">Yaase Agency Manager</div>
-          <div class="team-accolades">Manages the Yaase agency, extending SMDPCCU's services and building trust within the Yaase community.</div>
-        </div>
-      </div>
-
-      <!-- Credit Manager -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Mr. Solomon William Sackey</h3>
-          <div class="team-role">Credit Manager</div>
-          <div class="team-accolades">Oversees all credit operations, loan assessments, and portfolio management to ensure responsible lending and member financial growth.</div>
-        </div>
-      </div>
-
     </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Philip Anabila">
+        <img src="images/philip.jpeg" alt="Mr. Philip Anabila">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Philip Anabila</h3>
+        <div class="team-role">Internal Auditor</div>
+        <p class="team-bio">Certified Internal Auditor. Ensures compliance, risk management, and financial integrity across all operations.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Otis Abu">
+        <img src="images/otis.jpeg" alt="Mr. Otis Abu">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Otis Abu</h3>
+        <div class="team-role">Operations Manager</div>
+        <p class="team-bio">Oversees day-to-day operations, ensuring efficient service delivery and member satisfaction across all branches.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Daniel Opoku Mensah">
+        <img src="images/dan.jpeg" alt="Mr. Daniel Opoku Mensah">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Daniel Opoku Mensah</h3>
+        <div class="team-role">I.T Manager</div>
+        <p class="team-bio">Drives digital transformation, manages technology infrastructure, and ensures secure banking systems for members.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Mrs. Helina Owusu Ansah</h3>
+        <div class="team-role">Aputuogya Branch Manager</div>
+        <p class="team-bio">Leads the Aputuogya branch with a focus on community engagement, member growth, and quality financial services.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Mrs. Saintina Kuuridong Zaato</h3>
+        <div class="team-role">Esereso Branch Manager</div>
+        <p class="team-bio">Manages the Esereso branch, fostering strong member relationships and driving financial inclusion in the community.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Richard Obeng Kwarteng</h3>
+        <div class="team-role">Jachie Branch Manager</div>
+        <p class="team-bio">Oversees the Jachie branch operations, committed to delivering excellent service and expanding membership.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Miss. Esther Abaare</h3>
+        <div class="team-role">Abinkyi Market Branch Manager</div>
+        <p class="team-bio">Leads the Abinkyi Market branch, specialising in market trader services, susu collections, and business loans.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Daniel Kofi Gooshie">
+        <img src="images/gooshie yaase.jpeg" alt="Mr. Daniel Kofi Gooshie">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Daniel Kofi Gooshie</h3>
+        <div class="team-role">Yaase Agency Manager</div>
+        <p class="team-bio">Manages the Yaase agency, extending SMDPCCU's services and building trust within the Yaase community.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Solomon William Sackey</h3>
+        <div class="team-role">Credit Manager</div>
+        <p class="team-bio">Oversees all credit operations, loan assessments, and portfolio management to ensure responsible lending and member financial growth.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ========== BOARD OF DIRECTORS ========== -->
-<section class="team section-padding" id="board" style="background:var(--primary);">
-  <div class="container">
-    <div class="team-header reveal" style="text-align:center;margin-bottom:48px;">
-      <div class="section-label" style="color:rgba(255,255,255,0.8);">Governance</div>
-      <h2 class="section-title" style="color:#fff;">Board of Directors</h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Elected representatives of our members who provide oversight, strategic direction, and accountability for the credit union.</p>
+<!-- BOARD OF DIRECTORS -->
+<section class="team-sec tinted" id="board">
+  <div class="team-sec-header sf">
+    <div class="s-label">Governance</div>
+    <h2 class="s-title">Board of Directors</h2>
+    <p class="s-sub">Elected representatives of our members who provide oversight, strategic direction, and accountability for the credit union.</p>
+  </div>
+  <div class="team-grid">
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Matthew Seuyellu">
+        <img src="images/bod chairman 2.jpeg" alt="Mr. Matthew Seuyellu">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Matthew Seuyellu</h3>
+        <div class="team-role">Chairman</div>
+        <p class="team-bio">Presides over all board meetings, provides overall governance leadership, and ensures the credit union operates in the best interest of members.</p>
+      </div>
     </div>
-    <div class="team-grid">
 
-      <!-- Chairman -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/bod chairman 2.jpeg" alt="Mr. Matthew Seuyellu">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Matthew Seuyellu</h3>
-          <div class="team-role">Chairman</div>
-          <div class="team-accolades">Presides over all board meetings, provides overall governance leadership, and ensures the credit union operates in the best interest of members.</div>
-        </div>
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Charles Bawa">
+        <img src="images/bawa vice.jpeg" alt="Mr. Charles Bawa">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
       </div>
-
-      <!-- Vice Chairman -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/bawa vice.jpeg" alt="Mr. Charles Bawa">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Charles Bawa</h3>
-          <div class="team-role">Vice Chairman</div>
-          <div class="team-accolades">Supports the Chairman in governance duties, acts in the Chairman's absence, and contributes to strategic board decisions and member oversight.</div>
-        </div>
+      <div class="team-info">
+        <h3>Mr. Charles Bawa</h3>
+        <div class="team-role">Vice Chairman</div>
+        <p class="team-bio">Supports the Chairman in governance duties, acts in the Chairman's absence, and contributes to strategic board decisions and member oversight.</p>
       </div>
-
-      <!-- Treasurer -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Mr. Joseph Otchere</h3>
-          <div class="team-role">Treasurer</div>
-          <div class="team-accolades">Oversees the financial affairs of the board, monitors budgets and expenditures, and ensures sound financial reporting and accountability to members.</div>
-        </div>
-      </div>
-
-      <!-- Secretary -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/bod secretary.jpeg" alt="Mrs. Perpetual Adu-Nyarko">
-        </div>
-        <div class="team-info">
-          <h3>Mrs. Perpetual Adu-Nyarko</h3>
-          <div class="team-role">Secretary</div>
-          <div class="team-accolades">Maintains accurate board records, manages correspondence, prepares meeting minutes, and ensures proper documentation of all board resolutions.</div>
-        </div>
-      </div>
-
-      <!-- Assistant Secretary -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <div class="team-photo-placeholder">
-            <i class="fas fa-user-tie"></i>
-            <span>Photo</span>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Mrs. Felicia Amoah Dapaah</h3>
-          <div class="team-role">Assistant Secretary</div>
-          <div class="team-accolades">Assists the Secretary in administrative duties, supports board documentation, and ensures smooth communication between the board and management.</div>
-        </div>
-      </div>
-
-      <!-- Assistant Treasurer -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/isaac asirifi.jpeg" alt="Mr. Isaac Asirifi">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Isaac Asirifi</h3>
-          <div class="team-role">Assistant Treasurer</div>
-          <div class="team-accolades">Supports the Treasurer in financial oversight, assists with budget monitoring, and ensures financial records are accurate and transparently reported.</div>
-        </div>
-      </div>
-
-      <!-- Member -->
-      <div class="team-card reveal">
-        <div class="team-photo">
-          <img src="images/bod member.jpeg" alt="Mr. Joseph Acheampong">
-        </div>
-        <div class="team-info">
-          <h3>Mr. Joseph Acheampong</h3>
-          <div class="team-role">Board Member</div>
-          <div class="team-accolades">Participates in board deliberations, contributes to policy development, and represents the interests of members in all governance and strategic decisions.</div>
-        </div>
-      </div>
-
     </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Joseph Otchere</h3>
+        <div class="team-role">Treasurer</div>
+        <p class="team-bio">Oversees the financial affairs of the board, monitors budgets and expenditures, and ensures sound financial reporting and accountability to members.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mrs. Perpetual Adu-Nyarko">
+        <img src="images/bod secretary.jpeg" alt="Mrs. Perpetual Adu-Nyarko">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mrs. Perpetual Adu-Nyarko</h3>
+        <div class="team-role">Secretary</div>
+        <p class="team-bio">Maintains accurate board records, manages correspondence, prepares meeting minutes, and ensures proper documentation of all board resolutions.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo">
+        <div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
+      </div>
+      <div class="team-info">
+        <h3>Mrs. Felicia Amoah Dapaah</h3>
+        <div class="team-role">Assistant Secretary</div>
+        <p class="team-bio">Assists the Secretary in administrative duties, supports board documentation, and ensures smooth communication between the board and management.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Isaac Asirifi">
+        <img src="images/isaac asirifi.jpeg" alt="Mr. Isaac Asirifi">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Isaac Asirifi</h3>
+        <div class="team-role">Assistant Treasurer</div>
+        <p class="team-bio">Supports the Treasurer in financial oversight, assists with budget monitoring, and ensures financial records are accurate and transparently reported.</p>
+      </div>
+    </div>
+
+    <div class="team-card sf">
+      <div class="team-photo" data-name="Mr. Joseph Acheampong">
+        <img src="images/bod member.jpeg" alt="Mr. Joseph Acheampong">
+        <div class="photo-hover"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="team-info">
+        <h3>Mr. Joseph Acheampong</h3>
+        <div class="team-role">Board Member</div>
+        <p class="team-bio">Participates in board deliberations, contributes to policy development, and represents the interests of members in all governance and strategic decisions.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
-<footer style="background:var(--primary-dark);color:rgba(255,255,255,0.6);text-align:center;padding:24px;font-size:14px;">
-  <p style="margin:0;">&copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. &mdash; <a href="index.html" style="color:var(--secondary);text-decoration:none;">Back to Home</a></p>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="fn">St. Martin De Porres CCU</div>
+      <p>A dynamic financial institution committed to the trust, confidence and well-being of our membership. <span class="gold">The Happy Family.</span></p>
+    </div>
+    <div class="foot-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="team.html">Our Team</a></li>
+      <li><a href="index.html#news">News</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul></div>
+    <div class="foot-col"><h4>Products</h4><ul>
+      <li><a href="index.html#products">Personal Loans</a></li>
+      <li><a href="index.html#products">Business Loans</a></li>
+      <li><a href="index.html#products">Savings Accounts</a></li>
+      <li><a href="index.html#products">Fixed Deposits</a></li>
+      <li><a href="index.html#products">Susu Collection</a></li>
+    </ul></div>
+    <div class="foot-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+233202290588">020 229 0588</a></li>
+      <li><a href="mailto:enquiries@stmartindeporresccu.com">Send Email</a></li>
+      <li><a href="https://maps.app.goo.gl/PqSMnNYU2cFEy7MY8" target="_blank" rel="noopener">Atonsu, Kumasi</a></li>
+      <li><a href="https://wa.me/message/YMKPBDBY4DVIL1" target="_blank" rel="noopener">WhatsApp Chat</a></li>
+      <li><a href="join.html">Join Us Online</a></li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. All rights reserved.</span>
+    <span>Regulated by <span class="foot-reg">CUA Ghana</span></span>
+  </div>
 </footer>
 
-<!-- Photo Lightbox Modal -->
+<!-- PHOTO MODAL -->
 <div class="photo-modal" id="photoModal">
-  <button class="photo-modal-close" onclick="closePhotoModal()"><i class="fas fa-times"></i></button>
-  <img id="photoModalImg" src="" alt="">
-  <div class="photo-modal-name" id="photoModalName"></div>
+  <button class="photo-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <img id="modalImg" src="" alt="">
+  <div class="photo-modal-name" id="modalName"></div>
 </div>
 
 <script>
-  // Add overlay + lightbox to every team photo with an image
-  document.querySelectorAll('.team-photo').forEach(function(photo) {
-    const img = photo.querySelector('img');
+// Photo modal
+document.querySelectorAll('.team-photo[data-name]').forEach(function(photo) {
+  photo.addEventListener('click', function() {
+    const img = this.querySelector('img');
     if (!img) return;
-    const overlay = document.createElement('div');
-    overlay.className = 'team-photo-overlay';
-    overlay.innerHTML = '<i class="fas fa-expand"></i>';
-    photo.appendChild(overlay);
-    const name = photo.closest('.team-card').querySelector('h3')?.textContent || '';
-    photo.style.cursor = 'pointer';
-    photo.addEventListener('click', function() {
-      document.getElementById('photoModalImg').src = img.src;
-      document.getElementById('photoModalName').textContent = name;
-      document.getElementById('photoModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
+    document.getElementById('modalImg').src = img.src;
+    document.getElementById('modalName').textContent = this.dataset.name;
+    document.getElementById('photoModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
   });
+});
+function closeModal() {
+  document.getElementById('photoModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('photoModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
-  function closePhotoModal() {
-    document.getElementById('photoModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('photoModal').addEventListener('click', function(e) {
-    if (e.target === this) closePhotoModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closePhotoModal();
-  });
+// Scroll fade-in
+const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: .1 });
+document.querySelectorAll('.sf').forEach(el => obs.observe(el));
 </script>
 
-<script src="js/main.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -357,5 +526,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
 </body>
 </html>
