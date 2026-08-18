@@ -22,20 +22,19 @@ There are no linters, test runners, or package managers configured.
 
 ## Architecture
 
-Two HTML pages share one stylesheet and one JS file:
+Three self-contained HTML pages — each has its own inline `<style>` and `<script>` (no shared `css/` or `js/` files):
 
 | File | Purpose |
 |---|---|
 | `index.html` | Full single-page site (hero → services → about → loans & savings → calculators → news → gallery → CTA → contact → footer) |
 | `team.html` | Standalone page: management team + board of directors |
-| `css/styles.css` | All styles — CSS custom properties, responsive layout, gallery/lightbox, team page |
-| `js/main.js` | All JS — hero slider, scroll spy, loan eligibility calculator, FD calculator, gallery/lightbox, contact form |
+| `join.html` | Standalone page: open-an-account flow |
 
-### CSS Variables (defined in `:root`)
-The primary palette lives in `css/styles.css`. Use `var(--primary)`, `var(--primary-dark)`, `var(--accent)`, etc. **Note:** `team.html`'s footer references `var(--dark)`, which is undefined — the correct variable is `var(--primary-dark)`.
+### CSS Variables (defined in `:root`, duplicated per page)
+Each page defines its own `:root` block with the same palette: `var(--green)`, `var(--green-dark)`, `var(--gold)`, `var(--dark)`, `var(--text)`, `var(--muted)`, etc. Since the block is duplicated, a palette change must be applied to all three files.
 
-### JS Data Objects (top of `js/main.js`)
-- `loanRules` — 10 loan products, each with `monthly_rate`, `method` (`reducing_balance` or `straight_line`), `maxTenor`, and eligibility logic
+### JS Data Objects (inline `<script>` in `index.html`)
+- `loanRules` — loan products, each with `monthly_rate`, `method` (`reducing_balance` or `straight_line`), `maxTenor`, and eligibility logic
 - `fdTiers` — Fixed Deposit rates tiered by principal amount × term (91/182/365 days)
 
 Update these objects when rates change; the calculator UI derives everything from them.
@@ -45,15 +44,18 @@ Uses [Formspree](https://formspree.io) with form ID `mzdalber`. No backend requi
 
 ### External Dependencies (CDN only)
 - Google Fonts: DM Sans + Playfair Display
-- Font Awesome 6.5.1
+- Font Awesome 6.5.1 (`team.html`, `join.html`)
 
 ### Gallery / Lightbox
-The gallery section in `index.html` uses a masonry grid. All 48 photos in `images/Yaase Community Outreach/` are wired into the lightbox via `data-album="community-outreach"`. The lightbox `<div id="lightbox">` is placed immediately before `<script src="js/main.js">`.
+The gallery section in `index.html` uses a masonry grid. Photos in `images/Yaase Community Outreach/` are wired into the lightbox via `data-album="community-outreach"`.
+
+### SEO / Metadata
+Each page's `<head>` carries its own `<meta name="description">`, Open Graph/Twitter tags, canonical URL, and favicon/`apple-touch-icon` (all pointing at `images/logo.jpg`). `robots.txt` and `sitemap.xml` live at the repo root and assume the site is served from `https://stmartindeporresccu.com/` — update all three if the domain changes.
 
 ## Content Update Guide
 
 ### Loan / FD Rates
-Edit `loanRules` and `fdTiers` at the top of `js/main.js`.
+Edit `loanRules` and `fdTiers` in the inline `<script>` in `index.html`.
 
 ### Team Photos
 In `team.html`, replace `<div class="team-photo-placeholder">` with `<img src="images/..." alt="...">` inside the `.team-photo` wrapper. The CEO card uses `.ceo-card` for a special gold-border style.

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(rm -rf \"{css,js,images,assets}\")",
+      "Bash(rm -f css/styles.css js/main.js)",
+      "Bash(rmdir css *)"
     ]
   }
 }

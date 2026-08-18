@@ -4,13 +4,13 @@
 
 
 smdpccu-website/
-├── index.html          # Main HTML file
-├── css/
-│   └── styles.css      # All styles
-├── js/
-│   └── main.js         # All JavaScript (calculators, gallery, interactions)
+├── index.html          # Main HTML file (inline styles + scripts)
+├── team.html           # Management team + board of directors
+├── join.html           # Open-an-account page
 ├── images/
 │   └── logo.jpg        # SMDPCCU logo
+├── robots.txt
+├── sitemap.xml
 └── README.md           # This file
 ```
 
@@ -50,7 +50,7 @@ Replace placeholder divs inside `.gallery-item`:
 ```
 
 ### Update Loan Rates or FD Rates
-Edit the data objects at the top of `js/main.js`:
+Edit the data objects in the inline `<script>` at the top of `index.html`:
 - `loanRules` — loan products and rates
 - `fdTiers` — fixed deposit tiered rates
 
