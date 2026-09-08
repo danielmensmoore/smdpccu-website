@@ -26,7 +26,7 @@ Three self-contained HTML pages — each has its own inline `<style>` and `<scri
 
 | File | Purpose |
 |---|---|
-| `index.html` | Full single-page site (hero → services → about → loans & savings → calculators → news → gallery → CTA → contact → footer) |
+| `index.html` | Full single-page site (hero → services → about → loans & savings → calculators → news → branches → contact → footer) |
 | `team.html` | Standalone page: management team + board of directors |
 | `join.html` | Standalone page: open-an-account flow |
 
@@ -45,9 +45,10 @@ Uses [Formspree](https://formspree.io) with form ID `mzdalber`. No backend requi
 ### External Dependencies (CDN only)
 - Google Fonts: DM Sans + Playfair Display
 - Font Awesome 6.5.1 (`team.html`, `join.html`)
+- Tawk.to live chat widget (embedded near the end of the `<body>` on all three pages)
 
-### Gallery / Lightbox
-The gallery section in `index.html` uses a masonry grid. Photos in `images/Yaase Community Outreach/` are wired into the lightbox via `data-album="community-outreach"`.
+### Team Photos & Lightbox
+In `team.html`, each `.team-photo` with a `data-name` attribute wraps a real `<img>` and is clickable — a small inline script opens `#photoModal` with that image and name. Cards without `data-name` still show the `.team-photo-placeholder` icon (no photo yet).
 
 ### SEO / Metadata
 Each page's `<head>` carries its own `<meta name="description">`, Open Graph/Twitter tags, canonical URL, and favicon/`apple-touch-icon` (all pointing at `images/logo.jpg`). `robots.txt` and `sitemap.xml` live at the repo root and assume the site is served from `https://stmartindeporresccu.com/` — update all three if the domain changes.
@@ -58,7 +59,4 @@ Each page's `<head>` carries its own `<meta name="description">`, Open Graph/Twi
 Edit `loanRules` and `fdTiers` in the inline `<script>` in `index.html`.
 
 ### Team Photos
-In `team.html`, replace `<div class="team-photo-placeholder">` with `<img src="images/..." alt="...">` inside the `.team-photo` wrapper. The CEO card uses `.ceo-card` for a special gold-border style.
-
-### Gallery Photos
-Add `<img>` tags inside `.gallery-item` divs in `index.html`. Set `data-album` to match the filter tab value.
+In `team.html`, replace `<div class="team-photo-placeholder">` with `<img src="images/..." alt="...">` inside the `.team-photo` wrapper, and add a `data-name="..."` attribute to the `.team-photo` div so the photo-modal click handler and lightbox pick it up. The CEO card uses `.ceo-card` for a special gold-border style. Several management/board cards still show the placeholder pending real photos.

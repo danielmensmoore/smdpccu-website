@@ -2,13 +2,12 @@
 
 ## Project Structure
 
-
+```
 smdpccu-website/
-├── index.html          # Main HTML file (inline styles + scripts)
+├── index.html          # Main single-page site (inline styles + scripts)
 ├── team.html           # Management team + board of directors
 ├── join.html           # Open-an-account page
-├── images/
-│   └── logo.jpg        # SMDPCCU logo
+├── images/             # Logo, staff/board photos, branch & event photos
 ├── robots.txt
 ├── sitemap.xml
 └── README.md           # This file
@@ -17,40 +16,34 @@ smdpccu-website/
 ## Features
 
 - **Home** — Hero section with stats and social links
+- **Services** — Core service cards
 - **About Us** — Mission & Vision statements
-- **Management Team** — 10 team members with photo placeholders
-- **Services** — 6 core service cards
-- **Loans & Savings** — 8 loan products + 4 savings products with tabbed view
+- **Loans & Savings** — Loan products + savings products with tabbed view
 - **Financial Tools** — Loan Eligibility Checker & Fixed Deposit Calculator (real rates)
-- **Gallery** — Filterable photo/video gallery with lightbox viewer
-- **News & Blog** — Latest announcements
-- **Contact** — Contact form, Google Maps, branch list, working hours
-- **Floating WhatsApp** — Always-visible chat button
+- **News & Announcements** — Latest updates
+- **Branches** — Branch list, working hours
+- **Contact** — Contact form, Google Maps, working hours
+- **Floating WhatsApp button** and **Tawk.to live chat widget** on every page
+- **Team page** (`team.html`) — Management team + Board of Directors, with a click-to-enlarge photo modal
+- **Join page** (`join.html`) — Full membership application form (individual, business, and joint/group accounts)
 
 ## How to Update Content
 
-### Add Team Photos
-Replace the placeholder divs in `index.html` inside each `.team-photo`:
+### Add/Replace Team Photos
+In `team.html`, replace the placeholder inside `.team-photo`:
 ```html
 <!-- Replace this: -->
-<div class="team-photo-placeholder">...</div>
+<div class="team-photo-placeholder"><i class="fas fa-user-tie"></i><span>Photo</span></div>
 
-<!-- With this: -->
-<img src="images/team/ceo.jpg" alt="Mr. Justice Apenkwah">
-```
-
-### Add Gallery Photos/Videos
-Replace placeholder divs inside `.gallery-item`:
-```html
-<!-- For photos: -->
-<img src="images/gallery/agm-2025.jpg" alt="AGM 2025">
-
-<!-- For videos: -->
-<video src="videos/agm-highlights.mp4" poster="images/gallery/agm-poster.jpg"></video>
+<!-- With this (data-name enables the click-to-enlarge modal): -->
+<div class="team-photo" data-name="Full Name">
+  <img src="images/person.jpg" alt="Full Name">
+  <div class="photo-hover"><i class="fas fa-expand"></i></div>
+</div>
 ```
 
 ### Update Loan Rates or FD Rates
-Edit the data objects in the inline `<script>` at the top of `index.html`:
+Edit the data objects in the inline `<script>` in `index.html`:
 - `loanRules` — loan products and rates
 - `fdTiers` — fixed deposit tiered rates
 
