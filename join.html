@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <title>Open an Account — St. Martin De Porres Co-operative Credit Union Ltd.</title>
 <meta name="description" content="Open a savings or loan account with St. Martin De Porres Co-operative Credit Union Ltd. (SMDPCCU) — Kumasi, Ghana's trusted 'Happy Family' credit union.">
 <link rel="canonical" href="https://stmartindeporresccu.com/join.html">
@@ -23,7 +24,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green:#1a2e8b;--green-dark:#0f1f6b;--green-light:#2343ae;--gold:#c8933a;--gold-light:#e8b060;
+  --green:#1a2e8b;--green-dark:#0f1f6b;--green-light:#2343ae;--gold:#c8933a;--gold-light:#e8b060;--gold-deep:#7d5c22;
   --cream:#f4f6fb;--dark:#080d2a;--charcoal:#0d1440;--text:#1e2d4a;--muted:#5b6880;
   --white:#fff;--border:#d5daea;
 }
@@ -67,7 +68,7 @@ a{text-decoration:none;color:inherit}
 .subnav-links a:hover,.subnav-links a.active{color:var(--white);border-bottom-color:var(--gold)}
 
 /* SECTION LABELS */
-.s-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.s-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold-deep);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
 .s-label::before{content:'';width:20px;height:2px;background:var(--gold);border-radius:1px}
 
 /* PAGE HERO */
@@ -93,7 +94,7 @@ a{text-decoration:none;color:inherit}
 
 /* FORM NOTE */
 .form-note{background:var(--white);border-left:4px solid var(--gold);padding:14px 20px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--text);margin-bottom:28px;line-height:1.6;box-shadow:0 2px 12px rgba(26,46,139,.04)}
-.form-note i{color:var(--gold);margin-right:6px}
+.form-note i{color:var(--gold-deep);margin-right:6px}
 
 /* FORM SECTIONS */
 .fsection{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:30px 32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(26,46,139,.04)}
@@ -157,7 +158,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
 .foot-col li{margin-bottom:10px}
 .foot-col a{color:rgba(255,255,255,.45);font-size:13.5px;font-weight:300;transition:color .2s}
 .foot-col a:hover{color:var(--gold-light)}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,.25);font-weight:300}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,.5);font-weight:300}
 .foot-reg{color:var(--gold);font-weight:500}
 
 /* MOBILE */
@@ -181,9 +182,20 @@ footer{background:var(--dark);padding:64px 5% 28px}
   .page-hero{padding:60px 5% 48px}
   .join-body{padding:40px 4%}
 }
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--dark);color:rgba(255,255,255,.85);padding:16px 5%;display:none;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,.2);font-size:13.5px}
+.cookie-banner.show{display:flex}
+.cookie-banner p{margin:0;max-width:640px;line-height:1.6}
+.cookie-banner a{color:var(--gold-light);text-decoration:underline}
+.cookie-banner button{background:var(--gold);color:var(--dark);border:none;padding:10px 28px;border-radius:30px;font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .2s}
+.cookie-banner button:hover{background:var(--gold-light)}
+@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;padding:16px 20px}}
 </style>
 </head>
 <body>
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use cookies to enable live chat support and improve your experience on our site. See our <a href="privacy.html">Privacy Policy</a> to learn more.</p>
+  <button id="cookieAccept" type="button">Accept</button>
+</div>
 
 <!-- TOP BAR -->
 <div class="topbar">
@@ -283,6 +295,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
     <form id="membershipForm" action="https://formspree.io/f/mzdalber" method="POST">
       <input type="hidden" name="_subject" value="New Account Application — SMDPCCU">
       <input type="hidden" name="form_type" value="Account Opening Application">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <!-- SECTION 1: Account Type -->
       <div class="fsection">
@@ -391,7 +404,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
           </div>
           <div class="fgroup">
             <label>Phone Number *</label>
-            <input type="tel" name="phone" required placeholder="+233 XX XXX XXXX">
+            <input type="tel" name="phone" required placeholder="+233 XX XXX XXXX" pattern="[0-9+\-\s()]{9,20}" title="Enter a valid phone number">
           </div>
         </div>
         <div class="frow">
@@ -506,7 +519,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
         <div class="frow">
           <div class="fgroup">
             <label>Contact Number *</label>
-            <input type="tel" name="emergency_phone" required placeholder="+233 XX XXX XXXX">
+            <input type="tel" name="emergency_phone" required placeholder="+233 XX XXX XXXX" pattern="[0-9+\-\s()]{9,20}" title="Enter a valid phone number">
           </div>
           <div class="fgroup">
             <label>Address</label>
@@ -721,7 +734,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
     </ul></div>
   </div>
   <div class="foot-bottom">
-    <span>&copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. All rights reserved.</span>
+    <span>&copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. All rights reserved. &middot; <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> &middot; <a href="terms.html" style="color:inherit;text-decoration:underline">Terms &amp; Conditions</a></span>
     <span>Regulated by <span class="foot-reg">CUA Ghana</span></span>
   </div>
 </footer>
@@ -772,17 +785,37 @@ form.addEventListener('submit', async function(e) {
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69ac98e14be8191c38d13a77/1jj53ad12';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+function loadTawkTo(){
+  if (window.Tawk_API) return;
+  window.Tawk_API = window.Tawk_API || {};
+  window.Tawk_LoadStart = new Date();
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69ac98e14be8191c38d13a77/1jj53ad12';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+}
 </script>
 <!--End of Tawk.to Script-->
+
+<!-- COOKIE CONSENT -->
+<script>
+(function(){
+  var KEY='smdpccu_cookie_consent';
+  var banner=document.getElementById('cookieBanner');
+  var accepted=false;
+  try { accepted = localStorage.getItem(KEY)==='accepted'; } catch(e){}
+  if (accepted) { loadTawkTo(); }
+  else if (banner) { banner.classList.add('show'); }
+  var btn=document.getElementById('cookieAccept');
+  if (btn) btn.addEventListener('click', function(){
+    try { localStorage.setItem(KEY,'accepted'); } catch(e){}
+    if (banner) banner.classList.remove('show');
+    loadTawkTo();
+  });
+})();
+</script>
 
 </body>
 </html>
