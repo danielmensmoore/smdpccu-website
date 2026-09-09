@@ -179,6 +179,9 @@ section{padding:90px 5%}
 .pm-cta{display:inline-flex;align-items:center;gap:8px;margin-top:4px;background:var(--green);color:#fff;padding:12px 22px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.03em;transition:background .2s}
 .pm-cta svg{width:14px;height:14px}
 .pm-cta:hover{background:var(--green-light)}
+.pm-cta.alt{background:var(--gold);color:var(--dark)}
+.pm-cta.alt:hover{background:var(--gold-light)}
+.pm-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
 .pm-note{font-size:12px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:16px;margin-top:22px;line-height:1.6}
 .pm-img{width:100%;height:220px;overflow:hidden;background:var(--green-dark)}
 .pm-img img{width:100%;height:100%;object-fit:cover;display:block}
@@ -227,13 +230,17 @@ section{padding:90px 5%}
 /* BRANCHES */
 .branches-sec{background:var(--cream)}
 .branches-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:48px}
-.branch{background:var(--white);border-radius:8px;padding:28px 22px;border:1px solid var(--border);text-align:center;transition:all .3s}
+.branch{background:var(--white);border-radius:8px;padding:28px 22px;border:1px solid var(--border);text-align:center;transition:all .3s;cursor:pointer}
 .branch:hover{background:var(--green);border-color:var(--green)}
-.branch:hover .bnum,.branch:hover h3,.branch:hover .bsub{color:rgba(255,255,255,.9)}
+.branch:hover .bnum,.branch:hover h3,.branch:hover .bsub,.branch:hover .branch-cta{color:rgba(255,255,255,.9)}
 .branch:hover .bnum{opacity:.3}
 .bnum{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:rgba(10,102,64,.15);margin-bottom:10px;transition:color .3s}
 .branch h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--green-dark);margin-bottom:6px;transition:color .3s}
 .bsub{font-size:13px;color:var(--muted);font-weight:300;transition:color .3s}
+.branch-cta{display:block;margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);opacity:.65;transition:color .3s}
+.branches-map{width:100%;height:360px;border-radius:10px;overflow:hidden;margin-top:36px;border:1px solid var(--border)}
+.branches-map iframe{width:100%;height:100%;border:0;display:block}
+.branches-map-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
 
 /* CTA BAND */
 .cta-band{background:var(--green);padding:72px 5%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
@@ -321,6 +328,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
   .pm-head{padding:26px 22px 22px}
   .pm-body{padding:22px 22px 28px}
   .pm-meta-row{gap:14px 20px}
+  .branches-map{height:260px}
 }
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--dark);color:rgba(255,255,255,.85);padding:16px 5%;display:none;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,.2);font-size:13.5px}
 .cookie-banner.show{display:flex}
@@ -655,17 +663,21 @@ footer{background:var(--dark);padding:64px 5% 28px}
     <div style="text-align:right">
       <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:4px">Working Hours</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green-dark);font-weight:700">Mon&ndash;Fri 8AM&ndash;5PM</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:3px;font-weight:300">Saturday 9AM&ndash;1PM &middot; Sunday Closed</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:3px;font-weight:300">Head Office also open Saturday 9AM&ndash;1PM</div>
     </div>
   </div>
   <div class="branches-grid">
-    <div class="branch"><div class="bnum">01</div><h3>Head Office</h3><p class="bsub">Atonsu, Monaco Junction<br>Kumasi, Ashanti Region</p></div>
-    <div class="branch"><div class="bnum">02</div><h3>Aputuogya Branch</h3><p class="bsub">Serving the Aputuogya<br>community</p></div>
-    <div class="branch"><div class="bnum">03</div><h3>Esereso Branch</h3><p class="bsub">Convenient for<br>Esereso members</p></div>
-    <div class="branch"><div class="bnum">04</div><h3>Jachie Branch</h3><p class="bsub">Serving the Jachie<br>community</p></div>
-    <div class="branch"><div class="bnum">05</div><h3>Abinkyi Market</h3><p class="bsub">Heart of<br>Abinkyi Market</p></div>
-    <div class="branch"><div class="bnum">06</div><h3>Yaase Agency</h3><p class="bsub">Newest agency<br>in Yaase area</p></div>
+    <div class="branch" data-bid="headoffice" onclick="openBranch('headoffice')"><div class="bnum">01</div><h3>Head Office</h3><p class="bsub">Atonsu, Monaco Junction<br>Kumasi, Ashanti Region</p><span class="branch-cta">View Details &amp; Directions</span></div>
+    <div class="branch" data-bid="aputuogya" onclick="openBranch('aputuogya')"><div class="bnum">02</div><h3>Aputuogya Branch</h3><p class="bsub">Serving the Aputuogya<br>community</p><span class="branch-cta">View Details &amp; Directions</span></div>
+    <div class="branch" data-bid="esereso" onclick="openBranch('esereso')"><div class="bnum">03</div><h3>Esereso Branch</h3><p class="bsub">Convenient for<br>Esereso members</p><span class="branch-cta">View Details &amp; Directions</span></div>
+    <div class="branch" data-bid="jachie" onclick="openBranch('jachie')"><div class="bnum">04</div><h3>Jachie Branch</h3><p class="bsub">Serving the Jachie<br>community</p><span class="branch-cta">View Details &amp; Directions</span></div>
+    <div class="branch" data-bid="abinkyi" onclick="openBranch('abinkyi')"><div class="bnum">05</div><h3>Abinkyi Market</h3><p class="bsub">Heart of<br>Abinkyi Market</p><span class="branch-cta">View Details &amp; Directions</span></div>
+    <div class="branch" data-bid="yaase" onclick="openBranch('yaase')"><div class="bnum">06</div><h3>Yaase Agency</h3><p class="bsub">Newest agency<br>in Yaase area</p><span class="branch-cta">View Details &amp; Directions</span></div>
   </div>
+  <div class="branches-map">
+    <iframe src="https://www.google.com/maps?q=Atonsu%2C%20Monaco%20Junction%2C%20Kumasi%2C%20Ghana&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Map centered on SMDPCCU Head Office, Atonsu, Kumasi"></iframe>
+  </div>
+  <p class="branches-map-note">Map centered on our Head Office in Atonsu, Kumasi. Tap any branch above for directions to that specific location.</p>
 </section>
 
 <!-- CTA BAND -->
@@ -794,6 +806,27 @@ footer{background:var(--dark);padding:64px 5% 28px}
     </div>
     <div class="pm-body">
       <div id="nm-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BRANCH DETAILS MODAL -->
+<div class="product-modal" id="branchModal">
+  <div class="pm-box">
+    <button class="pm-close" onclick="closeBranchModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="pm-head">
+      <span class="pm-rate" id="bm-tag" style="margin-top:0;margin-bottom:12px"></span>
+      <h3 id="bm-title"></h3>
+      <p id="bm-address"></p>
+    </div>
+    <div class="pm-body">
+      <div class="pm-meta-row" id="bm-meta"></div>
+      <div class="pm-sec"><h4>Contact</h4><ul id="bm-contact"></ul></div>
+      <div class="pm-cta-row">
+        <a href="#" id="bm-directions" class="pm-cta" target="_blank" rel="noopener">Get Directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+        <a href="#" id="bm-call" class="pm-cta alt">Call This Branch</a>
+      </div>
+      <p class="pm-note" id="bm-note"></p>
     </div>
   </div>
 </div>
@@ -1178,8 +1211,109 @@ document.getElementById('newsModal').addEventListener('click', function(e) {
   if (e.target === this) closeNewsModal();
 });
 
+// Branch details modal
+const mainPhone = '020 229 0587';
+const mainPhoneHref = 'tel:+233202290588';
+const mainEmail = 'enquiries@stmartindeporresccu.com';
+const genericNote = "Directions are based on this branch's registered name and area, and the phone/email shown is our main line — a dedicated branch line will be added here once available. Please confirm with our head office if in doubt.";
+
+const branchDetails = {
+  headoffice: {
+    title: 'Head Office',
+    tag: 'Head Office',
+    address: 'Atonsu, Monaco Junction, Kumasi, Ashanti Region',
+    hours: 'Mon–Fri: 8AM–5PM · Sat: 9AM–1PM · Sun: Closed',
+    phone: mainPhone,
+    phoneHref: mainPhoneHref,
+    email: mainEmail,
+    directionsUrl: 'https://maps.app.goo.gl/PqSMnNYU2cFEy7MY8',
+    note: ''
+  },
+  aputuogya: {
+    title: 'Aputuogya Branch',
+    tag: 'Branch',
+    address: 'Aputuogya, Kumasi, Ashanti Region',
+    hours: 'Mon–Fri: 8AM–5PM · Sat &amp; Sun: Closed',
+    phone: mainPhone,
+    phoneHref: mainPhoneHref,
+    email: mainEmail,
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('SMDPCCU Aputuogya Branch, Kumasi, Ghana'),
+    note: genericNote
+  },
+  esereso: {
+    title: 'Esereso Branch',
+    tag: 'Branch',
+    address: 'Esereso, Kumasi, Ashanti Region',
+    hours: 'Mon–Fri: 8AM–5PM · Sat &amp; Sun: Closed',
+    phone: mainPhone,
+    phoneHref: mainPhoneHref,
+    email: mainEmail,
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('SMDPCCU Esereso Branch, Kumasi, Ghana'),
+    note: genericNote
+  },
+  jachie: {
+    title: 'Jachie Branch',
+    tag: 'Branch',
+    address: 'Jachie, Kumasi, Ashanti Region',
+    hours: 'Mon–Fri: 8AM–5PM · Sat &amp; Sun: Closed',
+    phone: mainPhone,
+    phoneHref: mainPhoneHref,
+    email: mainEmail,
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('SMDPCCU Jachie Branch, Kumasi, Ghana'),
+    note: genericNote
+  },
+  abinkyi: {
+    title: 'Abinkyi Market Branch',
+    tag: 'Branch',
+    address: 'Abinkyi Market, Kumasi, Ashanti Region',
+    hours: 'Mon–Fri: 8AM–5PM · Sat &amp; Sun: Closed',
+    phone: mainPhone,
+    phoneHref: mainPhoneHref,
+    email: mainEmail,
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('SMDPCCU Abinkyi Market Branch, Kumasi, Ghana'),
+    note: genericNote
+  },
+  yaase: {
+    title: 'Yaase Agency',
+    tag: 'Agency',
+    address: 'Yaase, Kumasi, Ashanti Region',
+    hours: 'Mon–Fri: 8AM–5PM · Sat &amp; Sun: Closed',
+    phone: mainPhone,
+    phoneHref: mainPhoneHref,
+    email: mainEmail,
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('SMDPCCU Yaase Agency, Kumasi, Ghana'),
+    note: genericNote
+  }
+};
+
+function openBranch(id) {
+  const d = branchDetails[id];
+  if (!d) return;
+  document.getElementById('bm-tag').textContent = d.tag;
+  document.getElementById('bm-title').textContent = d.title;
+  document.getElementById('bm-address').textContent = d.address;
+  document.getElementById('bm-meta').innerHTML =
+    '<div>Type<b>' + d.tag + '</b></div><div>Hours<b>' + d.hours + '</b></div>';
+  document.getElementById('bm-contact').innerHTML =
+    '<li>Address: ' + d.address + '</li><li>Phone: ' + d.phone + '</li><li>Email: ' + d.email + '</li>';
+  document.getElementById('bm-directions').href = d.directionsUrl;
+  document.getElementById('bm-call').href = d.phoneHref;
+  const noteEl = document.getElementById('bm-note');
+  noteEl.textContent = d.note;
+  noteEl.style.display = d.note ? '' : 'none';
+  document.getElementById('branchModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBranchModal() {
+  document.getElementById('branchModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('branchModal').addEventListener('click', function(e) {
+  if (e.target === this) closeBranchModal();
+});
+
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closeProductModal(); closeNewsModal(); }
+  if (e.key === 'Escape') { closeProductModal(); closeNewsModal(); closeBranchModal(); }
 });
 
 // Show/hide calculator fields based on loan type
