@@ -150,6 +150,40 @@ section{padding:90px 5%}
 .prod-card p{font-size:13.5px;color:var(--muted);line-height:1.7;font-weight:300}
 .prod-meta{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:20px;font-size:12.5px;color:var(--muted)}
 .prod-meta b{color:var(--green-dark);font-weight:600}
+.prod-more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:600;color:var(--green);letter-spacing:.03em;text-transform:uppercase;cursor:pointer;background:none;border:none;padding:0;font-family:inherit}
+.prod-more svg{width:14px;height:14px;stroke:var(--green);transition:transform .2s}
+.prod-more:hover svg{transform:translateX(4px)}
+
+/* PRODUCT DETAILS MODAL */
+.product-modal{position:fixed;inset:0;background:rgba(8,13,42,.72);display:flex;align-items:center;justify-content:center;padding:24px;z-index:1000;opacity:0;visibility:hidden;transition:opacity .25s}
+.product-modal.open{opacity:1;visibility:visible}
+.pm-box{background:var(--white);border-radius:12px;max-width:640px;width:100%;max-height:86vh;overflow-y:auto;transform:translateY(16px);transition:transform .25s;position:relative}
+.product-modal.open .pm-box{transform:translateY(0)}
+.pm-close{position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:background .2s;z-index:2}
+.pm-close svg{width:16px;height:16px}
+.pm-close:hover{background:rgba(255,255,255,.3)}
+.pm-head{background:var(--green-dark);padding:32px 36px 26px;border-radius:12px 12px 0 0}
+.pm-head h3{font-family:'Playfair Display',serif;color:#fff;font-size:1.5rem;margin-bottom:8px;padding-right:30px}
+.pm-head p{color:rgba(255,255,255,.7);font-size:13.5px;font-weight:300;line-height:1.6}
+.pm-rate{display:inline-block;background:var(--gold);color:var(--dark);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.04em;margin-top:14px}
+.pm-body{padding:28px 36px 36px}
+.pm-meta-row{display:flex;gap:22px;flex-wrap:wrap;padding:16px 18px;background:var(--cream);border-radius:8px;margin-bottom:24px}
+.pm-meta-row div{font-size:12px;color:var(--muted)}
+.pm-meta-row b{color:var(--green-dark);font-weight:600;display:block;font-size:13.5px;margin-top:3px}
+.pm-sec{margin-bottom:24px}
+.pm-sec:last-of-type{margin-bottom:0}
+.pm-sec h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+.pm-sec ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pm-sec li{font-size:13.5px;color:var(--text);line-height:1.6;padding-left:20px;position:relative;font-weight:300}
+.pm-sec li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.pm-cta{display:inline-flex;align-items:center;gap:8px;margin-top:4px;background:var(--green);color:#fff;padding:12px 22px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.03em;transition:background .2s}
+.pm-cta svg{width:14px;height:14px}
+.pm-cta:hover{background:var(--green-light)}
+.pm-note{font-size:12px;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:16px;margin-top:22px;line-height:1.6}
+.pm-img{width:100%;height:220px;overflow:hidden;background:var(--green-dark)}
+.pm-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pm-body p{font-size:13.5px;color:var(--text);line-height:1.75;font-weight:300;margin-bottom:14px}
+.pm-body p:last-child{margin-bottom:0}
 
 /* CALCULATORS */
 .calc-sec{background:var(--green-dark);position:relative;overflow:hidden}
@@ -186,7 +220,7 @@ section{padding:90px 5%}
 .news-date{font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:300}
 .news-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--green-dark);margin-bottom:10px;line-height:1.35}
 .news-body p{font-size:13.5px;color:var(--muted);line-height:1.7;font-weight:300}
-.news-read{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase}
+.news-read{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
 .news-read svg{width:14px;height:14px;stroke:var(--green);transition:transform .2s}
 .news-card:hover .news-read svg{transform:translateX(4px)}
 
@@ -284,6 +318,9 @@ footer{background:var(--dark);padding:64px 5% 28px}
   .btn-hero{padding:12px 28px;font-size:13px}
   .cta-band{padding:48px 5%}
   .page-hero{padding:60px 5% 48px}
+  .pm-head{padding:26px 22px 22px}
+  .pm-body{padding:22px 22px 28px}
+  .pm-meta-row{gap:14px 20px}
 }
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--dark);color:rgba(255,255,255,.85);padding:16px 5%;display:none;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,.2);font-size:13.5px}
 .cookie-banner.show{display:flex}
@@ -499,20 +536,20 @@ footer{background:var(--dark);padding:64px 5% 28px}
     <button class="tab-btn" onclick="switchTab('savings',this)">Savings Products</button>
   </div>
   <div id="loans" class="tab-pane active">
-    <div class="prod-card"><h3>Normal Loan</h3><span class="prod-rate">2.4% per month</span><p>Borrow up to 2&times; your savings for personal needs &ndash; education, medical, home improvement, and more.</p><div class="prod-meta"><div>Max: <b>24 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div></div>
-    <div class="prod-card"><h3>Loan Within Savings</h3><span class="prod-rate">1% per month</span><p>Borrow up to your full savings balance without disturbing your deposit. Lowest rate, quick processing.</p><div class="prod-meta"><div>Max: <b>12 months</b></div><div>Rate p.a.: <b>12%</b></div></div></div>
-    <div class="prod-card"><h3>Susu Loan</h3><span class="prod-rate">2.4%&ndash;3.4% per month</span><p>Leverage your susu contributions. Borrow up to 2&times; or 3&times; of susu savings. Max GH&#8373;150,000.</p><div class="prod-meta"><div>Max: <b>12 months</b></div><div>Basis: <b>Straight-line</b></div></div></div>
-    <div class="prod-card"><h3>Business Loan</h3><span class="prod-rate">4.4% per month</span><p>Grow your business with up to 5&times; your savings. For inventory, equipment, and expansion needs.</p><div class="prod-meta"><div>Max: <b>24 months</b></div><div>Rate p.a.: <b>52.8%</b></div></div></div>
-    <div class="prod-card"><h3>Salary Workers Loan</h3><span class="prod-rate">2.4% per month</span><p>For salaried workers. Borrow based on your net salary with up to 40% debt service ratio.</p><div class="prod-meta"><div>Max: <b>18 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div></div>
-    <div class="prod-card"><h3>Emergency Loan</h3><span class="prod-rate">3.4% per month</span><p>Quick access to funds for urgent needs. Up to 20% of total assets, ceiling GH&#8373;500,000.</p><div class="prod-meta"><div>Max: <b>6 months</b></div><div>Rate p.a.: <b>40.8%</b></div></div></div>
-    <div class="prod-card"><h3>Controller / DAS Loan</h3><span class="prod-rate">2.4% per month</span><p>Repayments deducted at source from your salary. Amount based on monthly deduction affordability.</p><div class="prod-meta"><div>Max: <b>18 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div></div>
-    <div class="prod-card"><h3>Special Purpose Loan</h3><span class="prod-rate">4.4% per month</span><p>For weddings, funerals, and other special occasions. Up to 20% of total assets, ceiling GH&#8373;500,000.</p><div class="prod-meta"><div>Max: <b>6 months</b></div><div>Rate p.a.: <b>52.8%</b></div></div></div>
+    <div class="prod-card" data-pid="normal"><h3>Normal Loan</h3><span class="prod-rate">2.4% per month</span><p>Borrow up to 2&times; your savings for personal needs &ndash; education, medical, home improvement, and more.</p><div class="prod-meta"><div>Max: <b>24 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div><button class="prod-more" onclick="openProduct('normal')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="lws"><h3>Loan Within Savings</h3><span class="prod-rate">1% per month</span><p>Borrow up to your full savings balance without disturbing your deposit. Lowest rate, quick processing.</p><div class="prod-meta"><div>Max: <b>12 months</b></div><div>Rate p.a.: <b>12%</b></div></div><button class="prod-more" onclick="openProduct('lws')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="susu"><h3>Susu Loan</h3><span class="prod-rate">2.4%&ndash;3.4% per month</span><p>Leverage your susu contributions. Borrow up to 2&times; or 3&times; of susu savings. Max GH&#8373;150,000.</p><div class="prod-meta"><div>Max: <b>12 months</b></div><div>Basis: <b>Straight-line</b></div></div><button class="prod-more" onclick="openProduct('susu')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="business"><h3>Business Loan</h3><span class="prod-rate">4.4% per month</span><p>Grow your business with up to 5&times; your savings. For inventory, equipment, and expansion needs.</p><div class="prod-meta"><div>Max: <b>24 months</b></div><div>Rate p.a.: <b>52.8%</b></div></div><button class="prod-more" onclick="openProduct('business')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="salary"><h3>Salary Workers Loan</h3><span class="prod-rate">2.4% per month</span><p>For salaried workers. Borrow based on your net salary with up to 40% debt service ratio.</p><div class="prod-meta"><div>Max: <b>18 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div><button class="prod-more" onclick="openProduct('salary')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="emergency"><h3>Emergency Loan</h3><span class="prod-rate">3.4% per month</span><p>Quick access to funds for urgent needs. Up to 20% of total assets, ceiling GH&#8373;500,000.</p><div class="prod-meta"><div>Max: <b>6 months</b></div><div>Rate p.a.: <b>40.8%</b></div></div><button class="prod-more" onclick="openProduct('emergency')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="controller"><h3>Controller / DAS Loan</h3><span class="prod-rate">2.4% per month</span><p>Repayments deducted at source from your salary. Amount based on monthly deduction affordability.</p><div class="prod-meta"><div>Max: <b>18 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div><button class="prod-more" onclick="openProduct('controller')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="special"><h3>Special Purpose Loan</h3><span class="prod-rate">4.4% per month</span><p>For weddings, funerals, and other special occasions. Up to 20% of total assets, ceiling GH&#8373;500,000.</p><div class="prod-meta"><div>Max: <b>6 months</b></div><div>Rate p.a.: <b>52.8%</b></div></div><button class="prod-more" onclick="openProduct('special')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
   </div>
   <div id="savings" class="tab-pane">
-    <div class="prod-card"><h3>Member Savings</h3><span class="prod-rate">Competitive interest</span><p>Minimum share purchase of GH&#8373;500 + entrance fee GH&#8373;20. Earn competitive interest from day one.</p><div class="prod-meta"><div>Min. shares: <b>GH&#8373;500</b></div><div>Entry: <b>GH&#8373;20</b></div></div></div>
-    <div class="prod-card"><h3>Susu Savings</h3><span class="prod-rate">Daily collection</span><p>Daily contributions collected by trusted field officers. The easiest way to build savings consistently.</p><div class="prod-meta"><div>Frequency: <b>Daily</b></div><div>Method: <b>Field officer</b></div></div></div>
-    <div class="prod-card"><h3>Fixed Deposit</h3><span class="prod-rate">Up to 4% p.a.</span><p>Lock in returns for 91, 182, or 365 days. Investment range: GH&#8373;2,000&ndash;GH&#8373;1,000,000. Effective April 27, 2026.</p><div class="prod-meta"><div>91d: <b>2%</b></div><div>182d: <b>3%</b></div></div></div>
-    <div class="prod-card"><h3>Youth Savings</h3><span class="prod-rate">Special rates</span><p>Secure your child's future with our dedicated youth savings account. Start building their future today.</p><div class="prod-meta"><div>For: <b>Under 18s</b></div><div>Rate: <b>Special</b></div></div></div>
+    <div class="prod-card" data-pid="member"><h3>Member Savings</h3><span class="prod-rate">Competitive interest</span><p>Minimum share purchase of GH&#8373;500 + entrance fee GH&#8373;20. Earn competitive interest from day one.</p><div class="prod-meta"><div>Min. shares: <b>GH&#8373;500</b></div><div>Entry: <b>GH&#8373;20</b></div></div><button class="prod-more" onclick="openProduct('member')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="susu-savings"><h3>Susu Savings</h3><span class="prod-rate">Daily collection</span><p>Daily contributions collected by trusted field officers. The easiest way to build savings consistently.</p><div class="prod-meta"><div>Frequency: <b>Daily</b></div><div>Method: <b>Field officer</b></div></div><button class="prod-more" onclick="openProduct('susu-savings')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="fd"><h3>Fixed Deposit</h3><span class="prod-rate">Up to 4% p.a.</span><p>Lock in returns for 91, 182, or 365 days. Investment range: GH&#8373;2,000&ndash;GH&#8373;1,000,000. Effective April 27, 2026.</p><div class="prod-meta"><div>91d: <b>2%</b></div><div>182d: <b>3%</b></div></div><button class="prod-more" onclick="openProduct('fd')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
+    <div class="prod-card" data-pid="youth"><h3>Youth Savings</h3><span class="prod-rate">Special rates</span><p>Secure your child's future with our dedicated youth savings account. Start building their future today.</p><div class="prod-meta"><div>For: <b>Under 18s</b></div><div>Rate: <b>Special</b></div></div><button class="prod-more" onclick="openProduct('youth')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
   </div>
 </section>
 
@@ -590,19 +627,19 @@ footer{background:var(--dark);padding:64px 5% 28px}
   <div class="news-grid sf">
     <div class="news-card">
       <div class="news-img"><img src="images/cua/IMG_0051.jpg" alt="CUA Ghana rates update meeting" loading="lazy" width="1920" height="1440"><span class="news-tag-pill">Rates Update</span></div>
-      <div class="news-body"><div class="news-date">April 27, 2026</div><h3>New Loan &amp; Deposit Rates &ndash; Effective Immediately</h3><p>Following a CUA Ghana directive, rates revised. Normal Loan now 2.4% per month. Fixed Deposits up to 4% p.a.</p><span class="news-read">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
+      <div class="news-body"><div class="news-date">April 27, 2026</div><h3>New Loan &amp; Deposit Rates &ndash; Effective Immediately</h3><p>Following a CUA Ghana directive, rates revised. Normal Loan now 2.4% per month. Fixed Deposits up to 4% p.a.</p><span class="news-read" onclick="openNews('rates-update')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
     </div>
     <div class="news-card">
       <div class="news-img"><img src="images/cua/IMG_0055.jpg" alt="CUA Ghana visiting SMDPCCU board and management" loading="lazy" width="1920" height="1440"><span class="news-tag-pill">Event</span></div>
-      <div class="news-body"><div class="news-date">March 10, 2026</div><h3>CUA Ghana Visits SMDPCCU Board &amp; Management</h3><p>The Credit Union Association of Ghana visited to discuss progress, governance, and the strategic way forward.</p><span class="news-read">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
+      <div class="news-body"><div class="news-date">March 10, 2026</div><h3>CUA Ghana Visits SMDPCCU Board &amp; Management</h3><p>The Credit Union Association of Ghana visited to discuss progress, governance, and the strategic way forward.</p><span class="news-read" onclick="openNews('cua-visit')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
     </div>
     <div class="news-card">
       <div class="news-img" style="background:var(--green)"><span class="news-tag-pill">Technology</span></div>
-      <div class="news-body"><div class="news-date">March 2, 2026</div><h3>USSD Banking &ndash; Coming Soon to SMDPCCU</h3><p>A new USSD banking service is in development &ndash; check balances, transfer funds, and manage your account without internet.</p><span class="news-read">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
+      <div class="news-body"><div class="news-date">March 2, 2026</div><h3>USSD Banking &ndash; Coming Soon to SMDPCCU</h3><p>A new USSD banking service is in development &ndash; check balances, transfer funds, and manage your account without internet.</p><span class="news-read" onclick="openNews('ussd')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
     </div>
     <div class="news-card">
       <div class="news-img"><img src="images/Yaase Community Outreach/IMG_0240.jpg" alt="SMDPCCU team at the Yaase community outreach program" loading="lazy" width="1920" height="1280"><span class="news-tag-pill">Community</span></div>
-      <div class="news-body"><div class="news-date">2025</div><h3>Yaase Community Outreach Program</h3><p>SMDPCCU team visited Yaase to empower residents with financial literacy and introduce our savings and loan products.</p><span class="news-read">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
+      <div class="news-body"><div class="news-date">2025</div><h3>Yaase Community Outreach Program</h3><p>SMDPCCU team visited Yaase to empower residents with financial literacy and introduce our savings and loan products.</p><span class="news-read" onclick="openNews('yaase-outreach')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></span></div>
     </div>
   </div>
 </section>
@@ -725,6 +762,42 @@ footer{background:var(--dark);padding:64px 5% 28px}
   </div>
 </footer>
 
+<!-- PRODUCT DETAILS MODAL -->
+<div class="product-modal" id="productModal">
+  <div class="pm-box">
+    <button class="pm-close" onclick="closeProductModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="pm-head">
+      <h3 id="pm-title"></h3>
+      <p id="pm-tagline"></p>
+      <span class="pm-rate" id="pm-rate"></span>
+    </div>
+    <div class="pm-body">
+      <div class="pm-meta-row" id="pm-meta"></div>
+      <div class="pm-sec"><h4>Key Features</h4><ul id="pm-features"></ul></div>
+      <div class="pm-sec"><h4>Eligibility</h4><ul id="pm-eligibility"></ul></div>
+      <div class="pm-sec"><h4>Documents Required</h4><ul id="pm-documents"></ul></div>
+      <a href="join.html" class="pm-cta">Apply / Enquire Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+      <p class="pm-note">Rates, eligibility and documentation shown are indicative and may be updated from time to time. Please confirm current terms with a credit officer at any branch before applying.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE MODAL -->
+<div class="product-modal" id="newsModal">
+  <div class="pm-box">
+    <button class="pm-close" onclick="closeNewsModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="pm-img" id="nm-img"><img id="nm-img-src" src="" alt=""></div>
+    <div class="pm-head">
+      <span class="pm-rate" id="nm-tag" style="margin-top:0;margin-bottom:12px"></span>
+      <h3 id="nm-title"></h3>
+      <p id="nm-date" style="color:rgba(255,255,255,.55);font-size:12.5px;font-weight:400;margin-top:8px"></p>
+    </div>
+    <div class="pm-body">
+      <div id="nm-body"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 // Slider
 let cur = 0;
@@ -751,6 +824,363 @@ function switchTab(id, btn) {
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
+
+// Product details modal
+const productDetails = {
+  normal: {
+    title: 'Normal Loan',
+    rate: '2.4% per month · 28.8% p.a.',
+    tagline: 'General-purpose credit for personal needs — education, medical bills, home improvement, and more.',
+    meta: [['Loan Amount', 'Up to 2× your savings'], ['Tenor', 'Up to 24 months'], ['Basis', 'Reducing balance']],
+    features: [
+      'Borrow up to twice your savings balance held with SMDPCCU',
+      'Interest charged on a reducing balance, so you pay less as the loan is repaid',
+      'Flexible monthly repayment over up to 24 months',
+      'Use it for virtually any personal or family need'
+    ],
+    eligibility: [
+      'Active member in good standing',
+      'Minimum savings balance maintained for at least 3 months',
+      'No default on an existing loan',
+      'At least one acceptable guarantor who is also a member'
+    ],
+    documents: [
+      'Completed loan application form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      '2 recent passport-size photographs',
+      'Savings passbook or statement',
+      "Guarantor's ID and signed consent form"
+    ]
+  },
+  lws: {
+    title: 'Loan Within Savings',
+    rate: '1% per month · 12% p.a.',
+    tagline: 'Borrow against your own savings without breaking your deposit — our fastest, lowest-cost loan.',
+    meta: [['Loan Amount', 'Up to 100% of savings'], ['Tenor', 'Up to 12 months'], ['Basis', 'Reducing balance']],
+    features: [
+      'Access up to the full value of your savings balance',
+      'Lowest interest rate of any SMDPCCU loan product',
+      'Fast processing in most cases, since your own savings secure the loan',
+      'Your savings balance is held as security until the loan is repaid'
+    ],
+    eligibility: [
+      'Active member with a savings balance equal to or greater than the amount requested',
+      'No outstanding default on a previous loan'
+    ],
+    documents: [
+      'Completed loan application form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Savings passbook or statement showing available balance'
+    ]
+  },
+  susu: {
+    title: 'Susu Loan',
+    rate: '2.4% – 3.4% per month',
+    tagline: 'Leverage your daily susu contributions to access quick credit on straight-line interest.',
+    meta: [['Loan Amount', '2× or 3× susu savings'], ['Ceiling', 'GH₵150,000'], ['Tenor', 'Up to 12 months'], ['Basis', 'Straight-line']],
+    features: [
+      'Borrow 2× your susu savings at 2.4% per month, or 3× at 3.4% per month',
+      'Interest calculated on a straight-line basis for predictable repayments',
+      'Repayments can be collected alongside your regular susu contributions'
+    ],
+    eligibility: [
+      'Active susu contributor with a consistent contribution history (minimum 3 months recommended)',
+      'Susu passbook up to date with your field officer'
+    ],
+    documents: [
+      'Susu passbook',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Completed loan application form'
+    ]
+  },
+  business: {
+    title: 'Business Loan',
+    rate: '4.4% per month · 52.8% p.a.',
+    tagline: 'Grow your business with financing for inventory, equipment, and expansion.',
+    meta: [['Loan Amount', 'Up to 5× your savings'], ['Tenor', 'Up to 24 months'], ['Basis', 'Reducing balance']],
+    features: [
+      'Borrow up to five times your savings balance',
+      'Funds can be used for stock, equipment, renovation, or expansion',
+      'Repayment tailored to business cash flow, over up to 24 months'
+    ],
+    eligibility: [
+      'Active member with a demonstrable, operating business (formal or informal)',
+      'Business operating for a minimum of 6–12 months recommended',
+      'Savings and/or collateral on record with SMDPCCU',
+      'At least one acceptable guarantor'
+    ],
+    documents: [
+      'Completed loan application form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Evidence of business activity (registration certificate, permit, or trading records)',
+      'Savings passbook or statement',
+      "Guarantor's ID and signed consent form"
+    ]
+  },
+  salary: {
+    title: 'Salary Workers Loan',
+    rate: '2.4% per month · 28.8% p.a.',
+    tagline: 'For salaried employees — borrow responsibly against your net monthly income.',
+    meta: [['Debt Service Ratio', 'Up to 40% of net salary'], ['Tenor', 'Up to 18 months'], ['Basis', 'Reducing balance']],
+    features: [
+      'Loan amount sized to keep repayments within 40% of your net monthly salary',
+      'Repayment period of up to 18 months',
+      'Suited to employees with a verifiable, regular income'
+    ],
+    eligibility: [
+      'Active member in steady, verifiable employment',
+      'Monthly repayment does not exceed 40% of net salary (debt service ratio)',
+      'Employer confirmation of employment and salary'
+    ],
+    documents: [
+      'Employment / introduction letter from employer',
+      '3 most recent payslips',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Bank statement, where salary is paid through a bank',
+      'Completed loan application form and guarantor consent'
+    ]
+  },
+  emergency: {
+    title: 'Emergency Loan',
+    rate: '3.4% per month · 40.8% p.a.',
+    tagline: 'Fast-tracked funding for urgent, unplanned needs.',
+    meta: [['Loan Amount', 'Up to 20% of total assets'], ['Ceiling', 'GH₵500,000'], ['Tenor', 'Up to 6 months'], ['Basis', 'Straight-line']],
+    features: [
+      'Streamlined approval process for urgent situations',
+      'Amount based on 20% of your recorded total assets with SMDPCCU, capped at GH₵500,000',
+      'Short repayment window of up to 6 months'
+    ],
+    eligibility: [
+      'Active member with assets/savings on record with SMDPCCU',
+      'Demonstrable urgent need, e.g. a medical emergency'
+    ],
+    documents: [
+      'Completed loan application form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Brief supporting evidence of the emergency where available (e.g. medical bill)'
+    ]
+  },
+  controller: {
+    title: 'Controller / DAS Loan',
+    rate: '2.4% per month · 28.8% p.a.',
+    tagline: "For government and public-sector workers — repayments deducted directly at source.",
+    meta: [['Tenor', 'Up to 18 months'], ['Basis', 'Reducing balance'], ['Repayment', 'Deduction at source']],
+    features: [
+      "Repayments deducted directly from salary via Controller & Accountant-General's Department (CAGD) or an equivalent check-off arrangement",
+      'Amount sized to what your monthly deduction can comfortably support',
+      'No need to manually make monthly repayments once set up'
+    ],
+    eligibility: [
+      'Public/civil sector employee on CAGD payroll or a recognised check-off scheme',
+      'Monthly deduction affordability confirmed against salary'
+    ],
+    documents: [
+      'Recent payslip or CAGD printout',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Deduction / check-off authorization form',
+      'Completed loan application form'
+    ]
+  },
+  special: {
+    title: 'Special Purpose Loan',
+    rate: '4.4% per month · 52.8% p.a.',
+    tagline: 'For weddings, funerals, and other significant life occasions.',
+    meta: [['Loan Amount', 'Up to 20% of total assets'], ['Ceiling', 'GH₵500,000'], ['Tenor', 'Up to 6 months']],
+    features: [
+      'Purpose-built for major family and social occasions',
+      'Amount based on 20% of your recorded total assets with SMDPCCU, capped at GH₵500,000',
+      'Short 6-month tenor for a manageable, one-off financial commitment'
+    ],
+    eligibility: [
+      'Active member with assets/savings on record with SMDPCCU',
+      'Occasion-related need, e.g. wedding, funeral, or naming ceremony'
+    ],
+    documents: [
+      'Completed loan application form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Brief description or evidence of the occasion where requested'
+    ]
+  },
+  member: {
+    title: 'Member Savings',
+    rate: 'Competitive interest',
+    tagline: 'Your core membership account — the foundation for every other SMDPCCU product.',
+    meta: [['Min. Shares', 'GH₵500'], ['Entrance Fee', 'GH₵20'], ['Interest', 'Competitive, from day one']],
+    features: [
+      'Opens your membership and gives you access to all loan and savings products',
+      'Earns competitive interest, with annual dividends declared based on performance',
+      'Acts as the savings base used to calculate your borrowing power for most loans'
+    ],
+    eligibility: [
+      'Open to individuals who live, work, or worship within our area of operation (common bond)',
+      '18 years and above — minors may join via a Youth Savings account'
+    ],
+    documents: [
+      'Completed membership / account-opening form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      '2 passport-size photographs',
+      'Minimum GH₵500 share deposit plus GH₵20 entrance fee'
+    ]
+  },
+  'susu-savings': {
+    title: 'Susu Savings',
+    rate: 'Daily collection',
+    tagline: 'The easiest way to build a savings habit — a trusted field officer collects daily at your door or stall.',
+    meta: [['Frequency', 'Daily'], ['Method', 'Field officer collection'], ['Minimum Balance', 'None']],
+    features: [
+      'Daily contributions collected wherever is convenient for you',
+      'No minimum balance required to start',
+      'Builds the contribution history needed to qualify for a Susu Loan'
+    ],
+    eligibility: [
+      'Open to any active SMDPCCU member'
+    ],
+    documents: [
+      'Susu passbook, issued at signup',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence"
+    ]
+  },
+  fd: {
+    title: 'Fixed Deposit',
+    rate: 'Up to 4% p.a.',
+    tagline: 'Lock in a guaranteed return on a lump sum for a fixed term.',
+    meta: [['91 Days', '2.00% p.a.'], ['182 Days', '3.00% p.a.'], ['365 Days', '4.00% p.a.'], ['Range', 'GH₵2,000 – GH₵1,000,000']],
+    features: [
+      'Choose a 91, 182, or 365-day term to match your plans',
+      'Guaranteed, fixed interest rate for the full term',
+      'Renewable at maturity, or paid out together with your principal',
+      'Early withdrawal before maturity is subject to our early-withdrawal terms and may reduce interest earned'
+    ],
+    eligibility: [
+      'Active member with a minimum of GH₵2,000 to invest'
+    ],
+    documents: [
+      'Fixed deposit application / mandate form',
+      "Valid ID — Ghana Card, Passport, Voter's ID, or Driver's Licence",
+      'Proof of deposit / funds transfer'
+    ]
+  },
+  youth: {
+    title: 'Youth Savings',
+    rate: 'Special rates',
+    tagline: "Start a savings habit early — a dedicated account for children under 18, opened and managed by a parent or guardian.",
+    meta: [['For', 'Members under 18'], ['Opened By', 'Parent / guardian'], ['Rate', 'Special youth rate']],
+    features: [
+      'Designed to build a long-term savings culture in children and teenagers',
+      "Operated by a parent or guardian on the child's behalf until age 18",
+      'Converts to a full Member Savings account at 18'
+    ],
+    eligibility: [
+      'Child / ward under 18 years',
+      'Parent or guardian must be, or become, an SMDPCCU member'
+    ],
+    documents: [
+      "Child's birth certificate",
+      "Guardian's valid ID and membership details",
+      "Guardian's signed consent form"
+    ]
+  }
+};
+
+function openProduct(id) {
+  const d = productDetails[id];
+  if (!d) return;
+  document.getElementById('pm-title').textContent = d.title;
+  document.getElementById('pm-tagline').textContent = d.tagline;
+  document.getElementById('pm-rate').textContent = d.rate;
+  document.getElementById('pm-meta').innerHTML = d.meta.map(m => '<div>' + m[0] + '<b>' + m[1] + '</b></div>').join('');
+  document.getElementById('pm-features').innerHTML = d.features.map(f => '<li>' + f + '</li>').join('');
+  document.getElementById('pm-eligibility').innerHTML = d.eligibility.map(f => '<li>' + f + '</li>').join('');
+  document.getElementById('pm-documents').innerHTML = d.documents.map(f => '<li>' + f + '</li>').join('');
+  document.getElementById('productModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeProductModal() {
+  document.getElementById('productModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('productModal').addEventListener('click', function(e) {
+  if (e.target === this) closeProductModal();
+});
+
+// News article modal
+const newsDetails = {
+  'rates-update': {
+    tag: 'Rates Update',
+    date: 'April 27, 2026',
+    title: 'New Loan & Deposit Rates – Effective Immediately',
+    image: 'images/cua/IMG_0051.jpg',
+    body: [
+      'Following a directive from the Credit Union Association of Ghana (CUA Ghana), SMDPCCU has revised its loan and fixed deposit rates, effective 27th April 2026.',
+      'Updated loan rates: Loan Within Savings 1% p.m., Normal Loan 2.4% p.m., Susu Loan 2.4%–3.4% p.m., Salary Workers Loan 2.4% p.m., Controller/DAS Loan 2.4% p.m., Emergency Loan 3.4% p.m., Special Purpose Loan 4.4% p.m., and Business Loan 4.4% p.m.',
+      'Fixed Deposit rates are now tiered by term: 2.00% p.a. for 91 days, 3.00% p.a. for 182 days, and 4.00% p.a. for 365 days, on deposits between GH₵2,000 and GH₵1,000,000.',
+      'Members with existing loan or fixed deposit accounts should contact any branch or our credit desk for guidance on how the revised rates apply to them.'
+    ]
+  },
+  'cua-visit': {
+    tag: 'Event',
+    date: 'March 10, 2026',
+    title: 'CUA Ghana Visits SMDPCCU Board & Management',
+    image: 'images/cua/IMG_0055.jpg',
+    body: [
+      "A delegation from the Credit Union Association of Ghana (CUA Ghana) paid a visit to the Board and Management of SMDPCCU to review the credit union's progress and governance practices.",
+      'Discussions centered on strengthening the cooperative partnership between SMDPCCU and CUA Ghana, regulatory compliance, and the strategic direction for growing membership and services across the Ashanti Region.',
+      'SMDPCCU remains a proud member of the Credit Union Association of Ghana and continues to operate under its regulatory oversight.'
+    ]
+  },
+  ussd: {
+    tag: 'Technology',
+    date: 'March 2, 2026',
+    title: 'USSD Banking – Coming Soon to SMDPCCU',
+    image: null,
+    body: [
+      'SMDPCCU is developing a USSD banking service designed to give members convenient access to their accounts directly from any mobile phone — no internet connection or smartphone required.',
+      'Once launched, the service is expected to let members check their savings balance, view a mini statement, transfer funds, and make susu or loan repayments straight from their phone.',
+      'The service is currently in development. An official launch date, dial code, and instructions will be announced through our branches, website, and social media channels once ready.'
+    ]
+  },
+  'yaase-outreach': {
+    tag: 'Community',
+    date: '2025',
+    title: 'Yaase Community Outreach Program',
+    image: 'images/Yaase Community Outreach/IMG_0240.jpg',
+    body: [
+      'As part of our commitment to financial literacy and community development, the SMDPCCU team visited Yaase to engage residents on the basics of saving, borrowing responsibly, and cooperative membership.',
+      'The outreach introduced attendees to our savings and loan products, including susu collection, and explained how a credit union works as a member-owned cooperative built on trust and mutual support.',
+      'Community outreach programs like this one reflect SMDPCCU\'s founding mission of empowering "The Happy Family" — our members — through accessible, member-first financial services.'
+    ]
+  }
+};
+
+function openNews(id) {
+  const d = newsDetails[id];
+  if (!d) return;
+  document.getElementById('nm-tag').textContent = d.tag;
+  document.getElementById('nm-title').textContent = d.title;
+  document.getElementById('nm-date').textContent = d.date;
+  document.getElementById('nm-body').innerHTML = d.body.map(p => '<p>' + p + '</p>').join('');
+  const imgWrap = document.getElementById('nm-img');
+  const imgEl = document.getElementById('nm-img-src');
+  if (d.image) {
+    imgEl.src = d.image;
+    imgWrap.style.display = '';
+  } else {
+    imgWrap.style.display = 'none';
+  }
+  document.getElementById('newsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNewsModal() {
+  document.getElementById('newsModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('newsModal').addEventListener('click', function(e) {
+  if (e.target === this) closeNewsModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeProductModal(); closeNewsModal(); }
+});
 
 // Show/hide calculator fields based on loan type
 function updateCalcFields() {
