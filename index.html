@@ -440,7 +440,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
       <h1>Affordable Loans for<br><em>Every Need</em></h1>
       <p>From personal to business loans &ndash; access credit starting from 1% per month with 8 different loan products tailored for you.</p>
       <div class="slide-btns">
-        <a href="#products" class="btn-hero primary">Explore Loans</a>
+        <a href="#products" data-tab="loans" class="btn-hero primary">Explore Loans</a>
         <a href="#calculators" class="btn-hero outline">Check Eligibility</a>
       </div>
     </div>
@@ -453,7 +453,7 @@ footer{background:var(--dark);padding:64px 5% 28px}
       <h1>Grow Your Savings,<br><em>Earn Up to 4% p.a.</em></h1>
       <p>Lock in your money in our competitive fixed deposits &ndash; 91, 182, or 365-day terms from just GH&#8373;2,000.</p>
       <div class="slide-btns">
-        <a href="#products" class="btn-hero primary">View Savings</a>
+        <a href="#products" data-tab="savings" class="btn-hero primary">View Savings</a>
         <a href="#calculators" class="btn-hero outline">Calculate Returns</a>
       </div>
     </div>
@@ -486,13 +486,13 @@ footer{background:var(--dark);padding:64px 5% 28px}
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
       <h3>Savings Accounts</h3>
       <p>Grow your money with competitive interest rates on regular savings, susu collections, and fixed deposits earning up to 4% per annum.</p>
-      <a href="#products" class="svc-link">View Products <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+      <a href="#products" data-tab="savings" class="svc-link">View Products <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
     </div>
     <div class="svc-card">
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg></div>
       <h3>Affordable Loans</h3>
       <p>Access personal, business, and emergency loans with flexible repayment plans and competitive rates from just 1% per month.</p>
-      <a href="#products" class="svc-link">Explore Loans <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+      <a href="#products" data-tab="loans" class="svc-link">Explore Loans <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
     </div>
     <div class="svc-card">
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
@@ -541,8 +541,8 @@ footer{background:var(--dark);padding:64px 5% 28px}
   <h2 class="s-title">Products That Work For You</h2>
   <p class="s-sub" style="max-width:560px">Explore our full range of loan and savings products designed to meet your unique financial needs.</p>
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('loans',this)">Loan Products</button>
-    <button class="tab-btn" onclick="switchTab('savings',this)">Savings Products</button>
+    <button class="tab-btn active" data-tab="loans" onclick="switchTab('loans',this)">Loan Products</button>
+    <button class="tab-btn" data-tab="savings" onclick="switchTab('savings',this)">Savings Products</button>
   </div>
   <div id="loans" class="tab-pane active">
     <div class="prod-card" data-pid="normal"><h3>Normal Loan</h3><span class="prod-rate">2.4% per month</span><p>Borrow up to 2&times; your savings for personal needs &ndash; education, medical, home improvement, and more.</p><div class="prod-meta"><div>Max: <b>24 months</b></div><div>Rate p.a.: <b>28.8%</b></div></div><button class="prod-more" onclick="openProduct('normal')">Read More <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button></div>
@@ -755,11 +755,11 @@ footer{background:var(--dark);padding:64px 5% 28px}
       <li><a href="#contact">Contact</a></li>
     </ul></div>
     <div class="foot-col"><h4>Products</h4><ul>
-      <li><a href="#products">Personal Loans</a></li>
-      <li><a href="#products">Business Loans</a></li>
-      <li><a href="#products">Savings Accounts</a></li>
-      <li><a href="#products">Fixed Deposits</a></li>
-      <li><a href="#products">Susu Collection</a></li>
+      <li><a href="#products" data-tab="loans">Personal Loans</a></li>
+      <li><a href="#products" data-tab="loans">Business Loans</a></li>
+      <li><a href="#products" data-tab="savings">Savings Accounts</a></li>
+      <li><a href="#products" data-tab="savings">Fixed Deposits</a></li>
+      <li><a href="#products" data-tab="savings">Susu Collection</a></li>
     </ul></div>
     <div class="foot-col"><h4>Contact</h4><ul>
       <li><a href="tel:+233202290588">020 229 0588</a></li>
@@ -853,11 +853,16 @@ setInterval(() => goSlide((cur + 1) % slides.length), 6000);
 
 // Product tabs
 function switchTab(id, btn) {
+  btn = btn || document.querySelector('.tab-btn[data-tab="' + id + '"]');
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
+// Links elsewhere on the page (hero, services, footer) open the matching tab
+document.querySelectorAll('a[data-tab]').forEach(a => {
+  a.addEventListener('click', () => switchTab(a.dataset.tab));
+});
 
 // Product details modal
 const productDetails = {
