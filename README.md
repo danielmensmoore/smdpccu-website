@@ -4,9 +4,14 @@
 
 ```
 smdpccu-website/
-├── index.html          # Main single-page site (inline styles + scripts)
+├── index.html          # Main single-page site
 ├── team.html           # Management team + board of directors
 ├── join.html           # Open-an-account page
+├── privacy.html        # Privacy policy
+├── terms.html          # Terms & conditions
+├── 404.html            # Not-found page
+├── css/styles.css      # Shared styles (palette, header/nav, footer, cookie banner, mobile rules)
+├── js/main.js          # Shared scripts (scroll fade-in, Tawk.to chat, cookie consent)
 ├── images/             # Logo, staff/board photos, branch & event photos
 ├── robots.txt
 ├── sitemap.xml

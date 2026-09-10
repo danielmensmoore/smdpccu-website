@@ -10,26 +10,13 @@
 <link rel="icon" type="image/jpeg" href="images/logo.jpg">
 <link rel="apple-touch-icon" href="images/logo.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --green:#1a2e8b;--green-dark:#0f1f6b;--green-light:#2343ae;--gold:#c8933a;--gold-light:#e8b060;--gold-deep:#7d5c22;
-  --cream:#f4f6fb;--dark:#080d2a;--charcoal:#0d1440;--text:#1e2d4a;--muted:#5b6880;
-  --white:#fff;--border:#d5daea;
-}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-
-.topbar{background:var(--charcoal);padding:9px 5%;display:flex;justify-content:center;align-items:center}
-.topbar-left{font-size:13px;color:rgba(255,255,255,.55);font-weight:300;letter-spacing:.01em}
-
-.mainnav{background:var(--white);padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
-.logo{display:flex;align-items:center;gap:12px;padding:14px 0}
-.logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2.5px solid var(--green)}
-.logo-text .name{font-family:'Playfair Display',serif;font-size:17px;color:var(--green);font-weight:700;line-height:1.1}
-.logo-text .sub{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.06em;text-transform:uppercase}
-.nav-join{background:var(--green);color:var(--white);font-size:13px;font-weight:600;padding:11px 28px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;transition:background .2s;display:inline-block}
-.nav-join:hover{background:var(--green-light)}
+/* Overrides of shared styles: centred top bar that stays visible on mobile, non-sticky nav */
+.topbar{justify-content:center}
+.topbar-left{display:inline}
+.mainnav{position:static;top:auto;z-index:auto;box-shadow:none}
+.logo-text .name{font-size:17px}
 
 .error-sec{background:var(--green-dark);position:relative;overflow:hidden;min-height:calc(100vh - 130px);display:flex;align-items:center;justify-content:center;padding:60px 5%;text-align:center}
 .error-sec::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%);opacity:.6}
@@ -38,11 +25,6 @@ a{text-decoration:none;color:inherit}
 .error-content h1{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--white);font-weight:700;margin-bottom:14px}
 .error-content p{color:rgba(255,255,255,.75);font-size:15.5px;line-height:1.75;margin-bottom:32px;font-weight:300}
 .error-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.btn-hero{display:inline-block;font-size:14px;font-weight:600;padding:14px 36px;border-radius:40px;letter-spacing:.05em;text-transform:uppercase;transition:all .25s}
-.btn-hero.primary{background:var(--gold);color:var(--dark)}
-.btn-hero.primary:hover{background:var(--gold-light);transform:translateY(-2px)}
-.btn-hero.outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5)}
-.btn-hero.outline:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
 .error-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-size:13.5px}
 .error-links a{color:rgba(255,255,255,.7);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .error-links a:hover{color:var(--white);border-bottom-color:var(--gold)}
@@ -93,6 +75,8 @@ footer a{color:inherit;text-decoration:underline}
 <footer>
   &copy; 2026 St. Martin De Porres Co-operative Credit Union Ltd. &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a>
 </footer>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>

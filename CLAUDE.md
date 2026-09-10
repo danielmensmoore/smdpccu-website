@@ -22,16 +22,24 @@ There are no linters, test runners, or package managers configured.
 
 ## Architecture
 
-Three self-contained HTML pages — each has its own inline `<style>` and `<script>` (no shared `css/` or `js/` files):
+Six HTML pages sharing one stylesheet and one script, plus page-specific inline `<style>`/`<script>`:
 
 | File | Purpose |
 |---|---|
 | `index.html` | Full single-page site (hero → services → about → loans & savings → calculators → news → branches → contact → footer) |
 | `team.html` | Standalone page: management team + board of directors |
 | `join.html` | Standalone page: open-an-account flow |
+| `privacy.html`, `terms.html` | Legal pages |
+| `404.html` | Minimal not-found page (overrides a few shared header/footer styles inline) |
+| `css/styles.css` | Shared CSS: reset, `:root` palette, top bar, main nav, ticker, sub nav, section labels/titles, `.page-hero`, `.btn-hero`, footer, `.sf` scroll fade, cookie banner, shared mobile breakpoints (960px / 640px) |
+| `js/main.js` | Shared JS: `.sf` scroll fade-in, `loadTawkTo()`, cookie consent (skipped on pages without `#cookieBanner`) |
 
-### CSS Variables (defined in `:root`, duplicated per page)
-Each page defines its own `:root` block with the same palette: `var(--green)`, `var(--green-dark)`, `var(--gold)`, `var(--dark)`, `var(--text)`, `var(--muted)`, etc. Since the block is duplicated, a palette change must be applied to all three files.
+Every page links `css/styles.css` **before** its inline `<style>` and loads `js/main.js` at the end of `<body>`, after any inline page script. Put rules used by more than one page in the shared files; keep page-only rules inline.
+
+**Cascade gotcha:** because the shared sheet loads first, an inline rule with equal specificity now beats a shared rule — including shared `@media` rules and `.sf`/`.sf.in`. Don't re-declare a shared selector inline with properties the shared mobile rules change (e.g. padding on `.subnav-links a`), and when a page component also carries `.sf`, use a more specific selector (see `.team-card.sf` in `team.html`).
+
+### CSS Variables (defined once in `css/styles.css`)
+The `:root` palette — `var(--green)`, `var(--green-dark)`, `var(--gold)`, `var(--dark)`, `var(--text)`, `var(--muted)`, etc. — lives only in `css/styles.css`, so a palette change is a single edit.
 
 ### JS Data Objects (inline `<script>` in `index.html`)
 - `loanRules` — loan products, each with `monthly_rate`, `method` (`reducing_balance` or `straight_line`), `maxTenor`, and eligibility logic
@@ -45,7 +53,7 @@ Uses [Formspree](https://formspree.io) with form ID `mzdalber`. No backend requi
 ### External Dependencies (CDN only)
 - Google Fonts: DM Sans + Playfair Display
 - Font Awesome 6.5.1 (`team.html`, `join.html`)
-- Tawk.to live chat widget (embedded near the end of the `<body>` on all three pages)
+- Tawk.to live chat widget (loaded by `js/main.js` only after the cookie banner is accepted)
 
 ### Team Photos & Lightbox
 In `team.html`, each `.team-photo` with a `data-name` attribute wraps a real `<img>` and is clickable — a small inline script opens `#photoModal` with that image and name. Cards without `data-name` still show the `.team-photo-placeholder` icon (no photo yet).
